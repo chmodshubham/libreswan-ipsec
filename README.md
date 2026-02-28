@@ -10,7 +10,7 @@ This repo has ready-to-use configs for two scenarios:
 Both use PSK authentication with AES-256 + SHA-256.
 
 > [!NOTE]
-> For all supported algorithms and config syntax, see [ALGORITHM_REFERENCE.md](docs/ALGORITHM_REFERENCE.md) and edit configs accordingly.
+> For all supported algorithms and config syntax, see [ALGORITHM_REFERENCE.md](docs/ALGORITHM_REFERENCE.md).
 
 ## Prerequisites
 

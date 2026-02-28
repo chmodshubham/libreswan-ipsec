@@ -1,0 +1,31 @@
+services:
+  site-a:
+    build: .
+    container_name: ipsec-site-a
+    privileged: true
+    networks:
+      ipsec-net:
+        ipv4_address: 172.28.0.10
+    volumes:
+      - ./configs/site-a/ipsec.d:/etc/ipsec.d
+      - ./configs/site-a/ipsec.conf:/etc/ipsec.conf:ro
+      - ./configs/site-a/ipsec.secrets:/etc/ipsec.secrets:ro
+
+  site-b:
+    build: .
+    container_name: ipsec-site-b
+    privileged: true
+    networks:
+      ipsec-net:
+        ipv4_address: 172.28.0.20
+    volumes:
+      - ./configs/site-b/ipsec.d:/etc/ipsec.d
+      - ./configs/site-b/ipsec.conf:/etc/ipsec.conf:ro
+      - ./configs/site-b/ipsec.secrets:/etc/ipsec.secrets:ro
+
+networks:
+  ipsec-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24

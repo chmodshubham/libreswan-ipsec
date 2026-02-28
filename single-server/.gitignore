@@ -1,0 +1,2 @@
+# Ignore staged binaries (generated during build)
+staging/

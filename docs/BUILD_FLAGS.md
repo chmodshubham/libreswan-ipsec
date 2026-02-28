@@ -59,7 +59,7 @@ All flags are set via `Makefile.inc.local` in the Libreswan source root, or pass
 | `USE_ML_KEM_768`   | `true` (disabled on older Ubuntu) | Post-quantum ML-KEM 192-bit         |
 | `USE_ML_KEM_1024`  | `false`                           | Post-quantum ML-KEM 256-bit         |
 | `USE_PRF_AES_XCBC` | `true`                            | AES-XCBC PRF                        |
-| `ALL_ALGS`         | `false`                           | Master switch — enable everything   |
+| `ALL_ALGS`         | `false`                           | Master switch - enable everything   |
 
 ## Installation Paths
 

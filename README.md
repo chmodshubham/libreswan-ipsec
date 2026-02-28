@@ -115,18 +115,13 @@ You should see `established IKE SA`, pings going through, and active traffic cou
 docker compose down
 ```
 
----
-
 ## 2. Two-server tunnel
 
 Template configs live in `two-server/server-a/` and `two-server/server-b/`. Each server considers itself `left`.
 
-**On both servers:** complete the build steps above, then enable forwarding:
+By default, the templates set up a **host-to-host** tunnel (encrypts all traffic between the two servers). If you need a **site-to-site** tunnel (connecting private subnets behind each server), add `leftsubnet` and `rightsubnet` to the configs, see the comments in the template files.
 
-```bash
-sudo sysctl -w net.ipv4.ip_forward=1
-echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
-```
+**On both servers:** complete the build steps above, then:
 
 **Generate a PSK** on one server:
 
@@ -169,8 +164,8 @@ The tunnel auto-starts (`auto=start` is set in the configs).
 
 ```bash
 sudo ipsec trafficstatus
-ping -c 4 192.168.2.1              # from Server A
-sudo tcpdump -i eth0 -c 5 esp      # should see ESP packets
+ping -c 4 <REMOTE_SERVER_IP>
+sudo tcpdump -i ens3 -c 5 esp     # should see ESP packets
 ```
 
 **Persist across reboots:**
@@ -178,8 +173,6 @@ sudo tcpdump -i eth0 -c 5 esp      # should see ESP packets
 ```bash
 sudo systemctl enable ipsec.service
 ```
-
----
 
 ## Troubleshooting
 

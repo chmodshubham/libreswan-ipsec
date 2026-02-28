@@ -1,6 +1,6 @@
 # Libreswan Build Flags
 
-All flags are set via `Makefile.inc.local` in the Libreswan source root, or passed as `make` arguments (e.g., `make USE_SECCOMP=true base`).
+All flags are set via `Makefile.inc.local` in the Libreswan source root, or passed as `make` arguments (e.g., `make USE_SECCOMP=true base`). Source: [`mk/config.mk`](https://github.com/libreswan/libreswan/blob/main/mk/config.mk)
 
 ## Feature Flags
 

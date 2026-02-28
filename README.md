@@ -50,6 +50,35 @@ sudo ipsec status
 # should say "pluto is running"
 ```
 
+### Build Targets
+
+| Target              | Description                                  |
+| ------------------- | -------------------------------------------- |
+| `make base`         | Compile libraries and programs only          |
+| `make all`          | Compile everything (base + man pages + html) |
+| `make install`      | Install everything (binaries + man pages)    |
+| `make install-base` | Install binaries only                        |
+| `make deb`          | Build a .deb package (Debian/Ubuntu)         |
+| `make rpm`          | Build an RPM package (from tarball)          |
+| `make git-rpm`      | Build an RPM package (from git tree)         |
+| `make tarpkg`       | Build a portable tar package                 |
+| `make clean`        | Remove build artifacts                       |
+| `make distclean`    | Remove all output including test results     |
+
+Build output goes into `OBJ.linux.x86_64/` (auto-detected per platform).
+
+### Local Overrides
+
+Create `Makefile.inc.local` in the source root to override any build variable without modifying tracked files. Example:
+
+```makefile
+# Makefile.inc.local
+USE_EDDSA=false
+USE_SECCOMP=true
+PREFIX=/usr
+DESTDIR=/tmp/staging
+```
+
 ### Known Issues
 
 If you encounter the error `error: 'edKey' undeclared`, it indicates that your current NSS (Network Security Services) version does not support EdDSA.

@@ -12,7 +12,29 @@ Complete reference of all cryptographic algorithms supported by Libreswan, with 
 | ESP (AEAD)     | `esp=encryption`                   |
 
 > [!IMPORTANT]
-> **IKE always needs a PRF.** Even with AEAD ciphers (which have built-in integrity), the `ike=` line requires a PRF algorithm for key derivation. The middle component in `ike=` is the **PRF** when using AEAD, not an integrity algorithm. For ESP, AEAD handles everything — no integrity or PRF is needed.
+> **IKE always needs a PRF.** Even with AEAD ciphers (which have built-in integrity), the `ike=` line requires a PRF algorithm for key derivation. The middle component in `ike=` is the **PRF** when using AEAD, not an integrity algorithm. For ESP, AEAD handles everything - no integrity or PRF is needed.
+
+### Source Files
+
+All algorithm names are defined via `.names` fields in [`lib/libswan/`](https://github.com/libreswan/libreswan/blob/main/lib/libswan/):
+
+| Source File                                                                                                                             | Defines                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [ike_alg_aes.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_aes.c)                                             | AES-CBC, AES-CTR, AES-GCM (8/12/16), AES-CCM (8/12/16), AES-XCBC, AES-CMAC, AES-GMAC |
+| [ike_alg_3des.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_3des.c)                                           | 3DES-CBC                                                                             |
+| [ike_alg_camellia.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_camellia.c)                                   | Camellia-CBC, Camellia-CTR                                                           |
+| [ike_alg_encrypt_chacha20_poly1305.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_encrypt_chacha20_poly1305.c) | ChaCha20-Poly1305                                                                    |
+| [ike_alg_none.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_none.c)                                           | NULL encryption, NONE integrity, DH0                                                 |
+| [ike_alg_sha2.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_sha2.c)                                           | SHA2-256/384/512 PRF + integrity                                                     |
+| [ike_alg_sha1.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_sha1.c)                                           | SHA1 PRF + integrity                                                                 |
+| [ike_alg_md5.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_md5.c)                                             | MD5 PRF + integrity                                                                  |
+| [ike_alg_hash_sha2_256.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_hash_sha2_256.c)                         | SHA2-256 hash                                                                        |
+| [ike_alg_hash_sha1.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_hash_sha1.c)                                 | SHA1 hash                                                                            |
+| [ike_alg_hash_md5.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_hash_md5.c)                                   | MD5 hash                                                                             |
+| [ike_alg_hash_identity.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_hash_identity.c)                         | Identity hash                                                                        |
+| [ike_alg_kem.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_kem.c)                                             | All DH groups (MODP, ECP, Curve25519) + ML-KEM                                       |
+| [ike_alg_ipcomp.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_ipcomp.c)                                       | DEFLATE, LZS, LZJH                                                                   |
+| [ike_alg_sn.c](https://github.com/libreswan/libreswan/blob/main/lib/libswan/ike_alg_sn.c)                                               | Extended Sequence Numbers                                                            |
 
 ## IKE & ESP Encryption Algorithms
 
@@ -33,7 +55,7 @@ Used in both `ike=` and `esp=` parameters.
 | `camellia`, `camellia_cbc`              | Camellia-CBC          | 128, 192, 256    | 256         | CBC  | No   |
 | `camellia_ctr`                          | Camellia-CTR          | 128, 192, 256    | 256         | CTR  | No   |
 | `chacha20_poly1305`, `chacha20poly1305` | ChaCha20-Poly1305     | 256 (fixed)      | 256         | AEAD | No   |
-| `null`                                  | NULL (no encryption)  | —                | —           | —    | No   |
+| `null`                                  | NULL (no encryption)  | -                | -           | -    | No   |
 
 > [!IMPORTANT]
 > **Key size selection:** The key size is appended to the **config name** (not the mode). Three formats are supported:
@@ -47,7 +69,7 @@ Used in both `ike=` and `esp=` parameters.
 > When no key size is specified, the **Default Key** from the table above is used.
 
 > [!NOTE]
-> **AEAD ciphers:** When using AEAD encryption (GCM, CCM, ChaCha20-Poly1305), do **not** specify a separate integrity algorithm — integrity is built in.
+> **AEAD ciphers:** When using AEAD encryption (GCM, CCM, ChaCha20-Poly1305), do **not** specify a separate integrity algorithm - integrity is built in.
 
 ## IKE & ESP Integrity (Authentication) Algorithms
 
@@ -63,7 +85,7 @@ Used in both `ike=` and `esp=` for non-AEAD ciphers. Not used with AEAD ciphers.
 | `md5`, `hmac_md5`, `hmac_md5_96`                                                   | HMAC-MD5                       | 96 bits    | No   |
 | `aes_xcbc`, `aes128_xcbc`, `aes_xcbc_96`, `aes128_xcbc_96`                         | AES-XCBC                       | 96 bits    | No   |
 | `aes_cmac`, `aes_cmac_96`                                                          | AES-CMAC                       | 96 bits    | Yes  |
-| `none`, `null`                                                                     | No integrity                   | —          | Yes  |
+| `none`, `null`                                                                     | No integrity                   | -          | Yes  |
 
 > [!NOTE]
 > **`hmac_sha2_256_truncbug`:** IKEv1-only compat entry for interoperating with broken implementations that truncate SHA2-256 to 96 bits instead of 128 bits. Not usable for IKEv2.
@@ -95,7 +117,7 @@ Internally used for digital signatures (IKEv2 AUTH). These are not directly user
 | `sha512`, `sha2_512`         | SHA2-512  | 512 bits    | Yes  |
 | `sha`, `sha1`                | SHA1      | 160 bits    | Yes  |
 | `md5`                        | MD5       | 128 bits    | No   |
-| `identity`                   | Identity  | —           | Yes  |
+| `identity`                   | Identity  | -           | Yes  |
 
 ## DH / KEM Groups (Key Exchange)
 
@@ -106,20 +128,20 @@ Used in `ike=` as the third component (e.g., `ike=aes256-sha2_256-modp2048`).
 | Config Name(s)     | Group         | Size (bits) | Build Flag | FIPS |
 | ------------------ | ------------- | ----------- | ---------- | ---- |
 | `modp1024`, `dh2`  | MODP Group 2  | 1024        | `USE_DH2`  | No   |
-| `modp1536`, `dh5`  | MODP Group 5  | 1536        | —          | No   |
-| `modp2048`, `dh14` | MODP Group 14 | 2048        | —          | Yes  |
-| `modp3072`, `dh15` | MODP Group 15 | 3072        | —          | Yes  |
-| `modp4096`, `dh16` | MODP Group 16 | 4096        | —          | Yes  |
-| `modp6144`, `dh17` | MODP Group 17 | 6144        | —          | Yes  |
-| `modp8192`, `dh18` | MODP Group 18 | 8192        | —          | Yes  |
+| `modp1536`, `dh5`  | MODP Group 5  | 1536        | -          | No   |
+| `modp2048`, `dh14` | MODP Group 14 | 2048        | -          | Yes  |
+| `modp3072`, `dh15` | MODP Group 15 | 3072        | -          | Yes  |
+| `modp4096`, `dh16` | MODP Group 16 | 4096        | -          | Yes  |
+| `modp6144`, `dh17` | MODP Group 17 | 6144        | -          | Yes  |
+| `modp8192`, `dh18` | MODP Group 18 | 8192        | -          | Yes  |
 
 ### Elliptic Curve Groups
 
 | Config Name(s)              | Curve                  | Size (bits) | Build Flag | FIPS |
 | --------------------------- | ---------------------- | ----------- | ---------- | ---- |
-| `dh19`, `ecp_256`, `ecp256` | NIST P-256 (secp256r1) | 256         | —          | Yes  |
-| `dh20`, `ecp_384`, `ecp384` | NIST P-384 (secp384r1) | 384         | —          | Yes  |
-| `dh21`, `ecp_521`, `ecp521` | NIST P-521 (secp521r1) | 521         | —          | Yes  |
+| `dh19`, `ecp_256`, `ecp256` | NIST P-256 (secp256r1) | 256         | -          | Yes  |
+| `dh20`, `ecp_384`, `ecp384` | NIST P-384 (secp384r1) | 384         | -          | Yes  |
+| `dh21`, `ecp_521`, `ecp521` | NIST P-521 (secp521r1) | 521         | -          | Yes  |
 | `dh31`, `curve25519`        | Curve25519             | 255         | `USE_DH31` | No   |
 | `dh32`, `curve448`          | Curve448               | 448         | `USE_DH32` | No   |
 
@@ -133,7 +155,7 @@ Used in `ike=` as the third component (e.g., `ike=aes256-sha2_256-modp2048`).
 
 ### Post-Quantum KEM (IKEv2 only)
 
-ML-KEM algorithms **cannot be used alone** — they must be combined with a classical DH group using the `+` syntax to form a **hybrid key exchange**.
+ML-KEM algorithms **cannot be used alone** - they must be combined with a classical DH group using the `+` syntax to form a **hybrid key exchange**.
 
 | Config Name(s)             | Algorithm                      | Build Flag        | FIPS |
 | -------------------------- | ------------------------------ | ----------------- | ---- |
@@ -142,7 +164,7 @@ ML-KEM algorithms **cannot be used alone** — they must be combined with a clas
 | `ml_kem_1024`, `mlkem1024` | ML-KEM-1024 (256-bit security) | `USE_ML_KEM_1024` | No   |
 
 > [!IMPORTANT]
-> **Hybrid key exchange syntax:** `<classical DH>+<ML-KEM>` — the classical group comes **first**, then `+`, then the post-quantum KEM.
+> **Hybrid key exchange syntax:** `<classical DH>+<ML-KEM>` - the classical group comes **first**, then `+`, then the post-quantum KEM.
 >
 > | Valid hybrid combinations | Meaning                 |
 > | ------------------------- | ----------------------- |

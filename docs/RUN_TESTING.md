@@ -111,7 +111,7 @@ make kvm-test KVM_TESTS=/absolute/path/to/test/directory
 
 ```bash
 cd testing/kvm
-make kvm-test KVM_TESTS=/home/ubuntu/ipsec-lib/libreswan/testing/pluto/ikev2-03-basic-rawrsa
+make kvm-test KVM_TESTS=/home/ubuntu/libreswan/testing/pluto/ikev2-03-basic-rawrsa
 ```
 
 ### Method 2: Using the `kvmrunner.py` script directly

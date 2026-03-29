@@ -21,7 +21,7 @@ sudo apt update
 sudo apt install -y build-essential pkg-config \
   bison flex libnss3-dev libnss3-tools libevent-dev \
   libunbound-dev libpam0g-dev libcap-ng-dev \
-  libldns-dev xmlto libcurl4-openssl-dev
+  libldns-dev xmlto libcurl4-openssl-dev libseccomp-dev
 ```
 
 ## Build & install Libreswan
@@ -33,7 +33,7 @@ cd libreswan
 # compile libreswan
 make base
 
-# install binaries to /usr/local
+# install binaries
 sudo make install-base
 
 # create the NSS certificate database
@@ -75,9 +75,10 @@ Create `Makefile.inc.local` in the source root to override any build variable wi
 # Makefile.inc.local
 USE_EDDSA=false
 USE_SECCOMP=true
-PREFIX=/usr
-DESTDIR=/tmp/staging
 ```
+
+> [!NOTE]
+> For a full list of build flags, see [BUILD_FLAGS.md](docs/BUILD_FLAGS.md).
 
 ### Known Issues
 
@@ -91,9 +92,6 @@ You have two options to resolve it:
 echo "USE_EDDSA=false" > Makefile.inc.local
 ```
 
-> [!NOTE]
-> For a full list of build flags, see [BUILD_FLAGS.md](docs/BUILD_FLAGS.md).
-
 **Option 2:** Upgrade NSS (>=3.99 which includes edDSA support)
 
 ## 1. Single-server test (Docker)
@@ -106,8 +104,7 @@ This runs two containers on a bridge network and sets up a tunnel between them.
 **Stage the binaries into the Docker build context:**
 
 ```bash
-sudo make DESTDIR=/tmp/libreswan-staging install-base
-sudo cp -a /tmp/libreswan-staging/usr/local/ single-server/staging/usr/local/
+sudo make DESTDIR=single-server/staging install-base
 sudo chown -R $(id -u):$(id -g) single-server/staging/
 ```
 

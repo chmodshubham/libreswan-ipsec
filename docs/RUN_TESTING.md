@@ -8,18 +8,16 @@ Before you can run any tests, you must ensure that the KVM testing environment i
 
 1. **Verify directory permissions**: Ensure that your Libreswan source directory (and its parent directories, such as your home directory) is world-readable so KVM virtual machines can mount the `testing/` directory.
 
-2. **Establish the KVM Pool Directory**: Create the required directory (by default `/home/ubuntu/pool` assuming your work is in `/home/ubuntu/libreswan`). Alternatively, set a custom path in `testing/kvm/Makefile.inc.local`:
+2. **Establish the KVM Pool Directory**: The pool directory stores VM disk images. By default it is auto-detected as `../pool` relative to the source root (e.g. if source is at `~/libreswan`, the pool defaults to `~/pool`). Create it before running:
 
    ```bash
-   mkdir -p /home/ubuntu/pool
+   mkdir -p ~/pool
    ```
 
-   _Optional Customization (`testing/kvm/Makefile.inc.local`)_:
+   If you want a different location, set it in `testing/kvm/Makefile.inc.local`:
 
    ```makefile
-   KVM_POOLDIR = /home/ubuntu/pool
-   KVM_SOURCEDIR = /home/ubuntu/libreswan
-   KVM_TESTINGDIR = /home/ubuntu/libreswan/testing
+   KVM_POOLDIR = /path/to/your/pool
    ```
 
 3. **Install System Dependencies**: Libreswan testing requires KVM, QEMU, libvirt, and an NFS server active on your system.
@@ -72,61 +70,53 @@ _(For more details on KVM setup options, you can refer to `testing/kvm/README` a
 
 ## Running a Single Test Suite
 
-There are two primary methods to run a specific, individual test directory (test suite):
+There are three primary methods to run a specific, individual test directory (test suite).
 
-Before you begin, the Libreswan testing framework uses modern Python f-string syntax (nested quotes) that is only supported in **Python 3.12+**. If your system (like Ubuntu 22.04) has an older Python version, it will fail with a `SyntaxError`. You have two options to resolve this:
+### Method 1: Using `./kvm check` (Quickest)
 
-**Option A: Install Python 3.12 (Recommended for active development)**
-You can install Python 3.12 via the `deadsnakes` PPA. Run the following:
-
-```bash
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt-get update
-sudo apt-get install -y python3.12
-```
-
-_(Note: Since `make kvm-test` runs `python3` natively, you may need to update your `update-alternatives` for `python3` to point to python3.12, or run the test runner script directly using `python3.12` if you don't want to change your system defaults)._
-
-**Option B: Patch the Python script**
-If you prefer not to mess with your system's Python versions, simply patch the script's syntax to be compatible with older Python versions:
+From the libreswan source root, use the `kvm` wrapper script with the test's relative path under `testing/`:
 
 ```bash
-sed -i "s/f\\\"  {key}: {len(values)}: {\\\" \\\".join(values)}\\\"/f\\\"  {key}: {len(values)}: {' '.join(values)}\\\"/g" /home/ubuntu/libreswan/testing/utils/fab/stats.py
+./kvm check testing/pluto/<test-name>
 ```
 
-### Method 1: Using `make kvm-test` (Recommended)
+**Example:**
 
-From the `testing/kvm` directory of your Libreswan repository, you can run an individual test by specifying the `KVM_TESTS` variable and passing the **ABSOLUTE PATH** to the specific test directory.
+```bash
+./kvm check testing/pluto/whack-deleteuser-01
+```
 
-**Warning**: Do not use relative paths (like `../pluto/ikev2-03-basic-rawrsa`) from within the `kvm/` directory or they will fail with a `FileNotFoundError`, because the underlying python testrunner script resets its internal working directory during execution.
+This is the most convenient method for running individual tests during development.
 
-**Syntax:**
+### Method 2: Using `make kvm-test`
+
+From the `testing/kvm` directory, pass the test path via `KVM_TESTS`. Use the **absolute path** to avoid `FileNotFoundError` (the runner resets its working directory internally):
 
 ```bash
 cd testing/kvm
-make kvm-test KVM_TESTS=/absolute/path/to/test/directory
+make kvm-test KVM_TESTS=$(realpath ../pluto/<test-name>)
 ```
 
 **Example:**
 
 ```bash
 cd testing/kvm
-make kvm-test KVM_TESTS=/home/ubuntu/libreswan/testing/pluto/ikev2-03-basic-rawrsa
+make kvm-test KVM_TESTS=$(realpath ../pluto/ikev2-03-basic-rawrsa)
 ```
 
-### Method 2: Using the `kvmrunner.py` script directly
+### Method 3: Using the `kvmrunner.py` script directly
 
-You can use the python test runner script directly if you want more granular control or if you are already navigating within the test folders.
+You can use the python test runner script directly if you want more granular control.
 
-**Syntax (from the root directory):**
+**From the source root:**
 
 ```bash
-./testing/utils/kvmrunner.py path/to/test/directory
+./testing/utils/kvmrunner.py testing/pluto/<test-name>
 ```
 
-**Syntax (from within the test directory itself):**
+**From within the test directory itself:**
 
 ```bash
-cd testing/pluto/ikev2-03-basic-rawrsa
+cd testing/pluto/<test-name>
 ../../utils/kvmrunner.py .
 ```

@@ -14,7 +14,7 @@ Before you can run any tests, you must ensure that the KVM testing environment i
    mkdir -p ~/pool
    ```
 
-   If you want a different location, set it in `testing/kvm/Makefile.inc.local`:
+   If you want a different location, set it in `Makefile.inc.local` (create an empty file if needed in the libreswan root):
 
    ```makefile
    KVM_POOLDIR = /path/to/your/pool
@@ -22,57 +22,73 @@ Before you can run any tests, you must ensure that the KVM testing environment i
 
 3. **Install System Dependencies**: Libreswan testing requires KVM, QEMU, libvirt, and an NFS server active on your system.
 
-   For **Ubuntu/Debian-based systems**, you install these via:
+   For **Fedora-based systems** (Recommended), you install these via:
+
+   ```bash
+   sudo dnf update
+   sudo dnf install -y make git gitk patch xmlto python3-pexpect curl tar \
+       qemu virt-install libvirt-daemon-kvm libvirt-daemon-qemu dvd+rw-tools \
+       nfs-utils nss-devel
+   ```
+
+   For **Debian/Ubuntu-based systems**, you install these via:
 
    ```bash
    sudo apt update
    sudo DEBIAN_FRONTEND=noninteractive apt install -y \
-       qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst \
-       python3-pexpect nfs-kernel-server libosinfo-bin
+       make git gitk xmlto python3-pexpect curl tar virtinst libvirt-clients \
+       libvirt-daemon libvirt-daemon-system libvirt-daemon-driver-qemu \
+       qemu-system-x86 dvd+rw-tools nfs-kernel-server rpcbind
    ```
 
 4. **Configure Access Permissions**: Add your user to the appropriate groups (`kvm`, `libvirt`). Furthermore, because KVM testing relies on QEMU, grant group write permissions to the libvirt socket directory so that `make` scripts can seamlessly trigger `virsh` and `qemu` commands:
 
+   For Fedora:
+
+   ```bash
+   sudo usermod -a -G $(stat --format %G /var/lib/libvirt/qemu) $USER
+   sudo usermod -a -G $(stat --format %G /dev/kvm) $USER
+   sudo chmod g+w /var/lib/libvirt/qemu
+   ```
+
+   For Debian/Ubuntu:
+
    ```bash
    sudo usermod -aG kvm,libvirt $USER
-   sudo chmod 777 /var/lib/libvirt/qemu
+   sudo chmod g+w /var/lib/libvirt/qemu
    ```
 
 > [!NOTE]
-> Ensure to log out and log back in (or start a new shell session) for group modifications to take effect.
+> Ensure to log out and log back in (or start a new shell session) for group modifications to take effect. You must also ensure that `root` can access the build directory (e.g., `chmod a+x $HOME`).
 
-5. **Install and create VMs**: Navigate to the `testing/kvm` directory and initialize the test environment by running:
+5. **Install and create VMs**: From the libreswan project root, initialize the test environment by running:
 
    ```bash
-   cd testing/kvm
-   make kvm-install
+   ./kvm install
    ```
 
-   _(Alternatively, you can run `make -C testing/kvm kvm-install` from the project root)._
-
-   This script triggers a multi-stage process that pulls the Fedora Server base ISO, unpacks it into the pool, configures the NFS mount points, and establishes standard VMs (typically named `west`, `east`, `north`, and `road`, as well as a network routing node `nic`).
+   This top-level script triggers a multi-stage process that pulls the Fedora Server base ISO, unpacks it into the pool, configures the NFS mount points, and establishes the standard VMs (typically named `west`, `east`, `north`, `road`, `rise`, `set`, and the network routing node `nic`).
 
 > [!WARNING]
 > This process takes several minutes and will download gigabytes of base images.
 
 ### KVM Virtual Machine Topologies
 
-In Libreswan tests you will interact with the following logical systems:
+In Libreswan tests you will interact with the following logical systems. Each machine in the test framework is assigned a specific identifier number as part of the benchmarking network (e.g., `198.18.0.0/15` and `198.19.0.0/16`):
 
-- **`east` & `west`**: Security Gateways. Used to test point-to-point IPsec Site-to-Site connections.
-- **`road`**: A remote "Road Warrior" end-user attempting client-to-site VPN access with a dynamic IP address.
-- **`north`**: An external actor (like a Branch Office or Public DNS record).
-- **`nic`**: The simulated network router / "Internet". Used to insert NAT environments or sniff simulated WAN traffic.
+- **`east` (23) & `west` (45)**: Security Gateways. Used to test point-to-point IPsec Site-to-Site connections.
+- **`road` (209)**: A remote "Road Warrior" end-user attempting client-to-site VPN access with a dynamic IP address.
+- **`north` (33)**: An external actor (like a Branch Office or Public DNS record).
+- **`nic` (254)**: The simulated network router / "Internet". Used to insert NAT environments or sniff simulated WAN traffic.
+- **`rise` (12) & `set` (15)**: Internal client machines located behind `east` and `west` respectively. Used to test subnet-to-subnet traffic and routing.
 
-![libreswan-testing-topology](./images/libreswan-testing-topology.png)
+Learn more about them in [Testnet Topology](./TESTING_TOPOLOGY.md).
 
-_(For more details on KVM setup options, you can refer to `testing/kvm/README` and `kvmsetup.sh`)_
+## Running the Test Suite
 
-## Running a Single Test Suite
+There are several options to run tests using the top-level `./kvm` script:
 
-There are three primary methods to run a specific, individual test directory (test suite).
-
-### Method 1: Using `./kvm check` (Quickest)
+### Running a specific test (Single-test mode)
 
 From the libreswan source root, use the `kvm` wrapper script with the test's relative path under `testing/`:
 
@@ -86,37 +102,45 @@ From the libreswan source root, use the `kvm` wrapper script with the test's rel
 ./kvm check testing/pluto/whack-deleteuser-01
 ```
 
-This is the most convenient method for running individual tests during development.
-
-### Method 2: Using `make kvm-test`
-
-From the `testing/kvm` directory, pass the test path via `KVM_TESTS`. Use the **absolute path** to avoid `FileNotFoundError` (the runner resets its working directory internally):
+By default, single-test mode skips post-mortem steps (like shutting down Pluto or destroying VMs) so you can log in and debug. To force post-mortem in single-test mode, add `-pm`:
 
 ```bash
-cd testing/kvm
-make kvm-test KVM_TESTS=$(realpath ../pluto/<test-name>)
+./kvm check -pm testing/pluto/<test-name>
 ```
 
-**Example:**
+### Running multiple tests or rechecking
+
+Run all tests:
 
 ```bash
-cd testing/kvm
-make kvm-test KVM_TESTS=$(realpath ../pluto/ikev2-03-basic-rawrsa)
+./kvm check
 ```
 
-### Method 3: Using the `kvmrunner.py` script directly
-
-You can use the python test runner script directly if you want more granular control.
-
-**From the source root:**
+Run tests, but skip tests that already passed:
 
 ```bash
-./testing/utils/kvmrunner.py testing/pluto/<test-name>
+./kvm recheck
 ```
 
-**From within the test directory itself:**
+Display results or differences:
 
 ```bash
-cd testing/pluto/<test-name>
-../../utils/kvmrunner.py .
+./kvm results
+./kvm diffs
 ```
+
+### Combining commands
+
+You can combine multiple operations on a single line:
+
+```bash
+./kvm test-clean install check recheck diff
+```
+
+And select specific tests with wildcards:
+
+```bash
+./kvm install check diff testing/pluto/*ikev2*
+```
+
+_(Note: Older methods like `make kvm-test` or `kvmrunner.py` are deprecated in favor of the `./kvm` top-level script)._

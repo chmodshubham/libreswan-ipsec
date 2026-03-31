@@ -190,7 +190,7 @@ These parameters come in `left` and `right` variants. `left` is typically the lo
 | Parameter             | Type   | Default  | Description                          |
 | --------------------- | ------ | -------- | ------------------------------------ |
 | `ikelifetime`         | string | `8h`     | IKE SA lifetime                      |
-| `ipsec-lifetime`      | string | `1h`     | IPsec (Child) SA lifetime            |
+| `ipsec-lifetime`      | string | `8h`     | IPsec (Child) SA lifetime            |
 | `ipsec-max-bytes`     | string | _(none)_ | Rekey after N bytes transferred      |
 | `ipsec-max-packets`   | string | _(none)_ | Rekey after N packets transferred    |
 | `rekey`               | yes/no | `yes`    | Enable SA rekeying                   |

@@ -52,6 +52,7 @@ All flags are set via `Makefile.inc.local` in the Libreswan source root, or pass
 | `USE_DH23`         | `false`                           | 2048-bit MODP with 224-bit subgroup |
 | `USE_DH24`         | `false`                           | 2048-bit MODP with 256-bit subgroup |
 | `USE_DH31`         | `true`                            | Curve25519 DH                       |
+| `USE_DH32`         | _(always enabled)_                | Curve448 DH (no flag to disable)    |
 | `USE_MD5`          | `true`                            | MD5 PRF                             |
 | `USE_SHA1`         | `true`                            | SHA-1 PRF                           |
 | `USE_SHA2`         | `true`                            | SHA-256/384/512                     |

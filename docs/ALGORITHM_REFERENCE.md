@@ -142,8 +142,8 @@ Used in `ike=` as the third component (e.g., `ike=aes256-sha2_256-modp2048`).
 | `dh19`, `ecp_256`, `ecp256` | NIST P-256 (secp256r1) | 256         | -          | Yes  |
 | `dh20`, `ecp_384`, `ecp384` | NIST P-384 (secp384r1) | 384         | -          | Yes  |
 | `dh21`, `ecp_521`, `ecp521` | NIST P-521 (secp521r1) | 521         | -          | Yes  |
-| `dh31`, `curve25519`        | Curve25519             | 255         | `USE_DH31` | No   |
-| `dh32`, `curve448`          | Curve448               | 448         | `USE_DH32` | No   |
+| `dh31`, `curve25519`        | Curve25519             | 255         | `USE_DH31`       | No   |
+| `dh32`, `curve448`          | Curve448               | 448         | _(always on)_    | No   |
 
 ### Uncommon / Legacy DH Groups
 

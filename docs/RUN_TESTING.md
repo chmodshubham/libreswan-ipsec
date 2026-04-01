@@ -67,22 +67,12 @@ Before you can run any tests, you must ensure that the KVM testing environment i
    ./kvm install
    ```
 
-   This top-level script triggers a multi-stage process that pulls the Fedora Server base ISO, unpacks it into the pool, configures the NFS mount points, and establishes the standard VMs (typically named `west`, `east`, `north`, `road`, `rise`, `set`, and the network routing node `nic`).
-
 > [!WARNING]
 > This process takes several minutes and will download gigabytes of base images.
 
-### KVM Virtual Machine Topologies
+This top-level script triggers a multi-stage process that pulls the Fedora Server base ISO, unpacks it into the pool, configures the NFS mount points, and establishes the standard VMs (typically named `west`, `east`, `north`, `road`, `rise`, `set`, and the network routing node `nic`).
 
-In Libreswan tests you will interact with the following logical systems. Each machine in the test framework is assigned a specific identifier number as part of the benchmarking network (e.g., `198.18.0.0/15` and `198.19.0.0/16`):
-
-- **`east` (23) & `west` (45)**: Security Gateways. Used to test point-to-point IPsec Site-to-Site connections.
-- **`road` (209)**: A remote "Road Warrior" end-user attempting client-to-site VPN access with a dynamic IP address.
-- **`north` (33)**: An external actor (like a Branch Office or Public DNS record).
-- **`nic` (254)**: The simulated network router / "Internet". Used to insert NAT environments or sniff simulated WAN traffic.
-- **`rise` (12) & `set` (15)**: Internal client machines located behind `east` and `west` respectively. Used to test subnet-to-subnet traffic and routing.
-
-Learn more about them in [Testnet Topology](./TESTING_TOPOLOGY.md).
+Learn more about the [Libreswan Testing Topology](./TESTING_TOPOLOGY.md).
 
 ## Running the Test Suite
 

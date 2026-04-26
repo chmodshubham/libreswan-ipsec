@@ -1,0 +1,646 @@
+Apr 26 14:20:16.171670: Starting Pluto (Libreswan Version 5.3 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-KDF) UNBOUND LDNS DNSSEC IPSECKEY LIBCAP_NG AUTH_PAM CURL(non-NSS) NFTABLES CAT NFLOG) pid:8
+Apr 26 14:20:16.171703: operating system: Linux 5.15.0 [Linux 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64]
+Apr 26 14:20:16.171708: using dns-resolver=file
+Apr 26 14:20:16.171709: core dump dir: /run/pluto
+Apr 26 14:20:16.171712: secrets file: /etc/ipsec.secrets
+Apr 26 14:20:16.171786: Initializing NSS using read-only database "sql:/var/lib/ipsec/nss"
+Apr 26 14:20:16.173269: FIPS Mode: OFF
+Apr 26 14:20:16.173276: NSS crypto library initialized
+Apr 26 14:20:16.173292: FIPS mode disabled for pluto daemon
+Apr 26 14:20:16.173294: NSS: OCSP [disabled]
+Apr 26 14:20:16.173295: FIPS HMAC integrity support [not required]
+Apr 26 14:20:16.173354: libcap-ng support [enabled]
+Apr 26 14:20:16.173356: Linux audit support [disabled]
+Apr 26 14:20:16.173357: leak-detective [enabled]
+Apr 26 14:20:16.173358: NSS crypto [enabled]
+Apr 26 14:20:16.173359: XAUTH PAM support [enabled]
+Apr 26 14:20:16.173365: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Apr 26 14:20:16.173385: log rate limiting [enabled]
+Apr 26 14:20:16.173387: NAT-Traversal: keep-alive period 20s
+Apr 26 14:20:16.253157: IPsec Interface [managed]
+Apr 26 14:20:16.253253: refreshed session resume keys, issuing key 1
+Apr 26 14:20:16.253378: Encryption Algorithm (cipher):
+Apr 26 14:20:16.253387:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Apr 26 14:20:16.253392:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Apr 26 14:20:16.253396:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Apr 26 14:20:16.253401:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Apr 26 14:20:16.253405:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP                      
+Apr 26 14:20:16.253409:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Apr 26 14:20:16.253414:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm, aes_gcm_c
+Apr 26 14:20:16.253418:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_b
+Apr 26 14:20:16.253422:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_a
+Apr 26 14:20:16.253427:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Apr 26 14:20:16.253431:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Apr 26 14:20:16.253435:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Apr 26 14:20:16.253439:   NULL               []             IKEv1:     ESP     IKEv2:     ESP          NULL        
+Apr 26 14:20:16.253443:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Apr 26 14:20:16.253446: Hashing Algorithm:
+Apr 26 14:20:16.253450:   MD5                               IKEv1: IKE         IKEv2:                  NSS         
+Apr 26 14:20:16.253454:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Apr 26 14:20:16.253457:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Apr 26 14:20:16.253461:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Apr 26 14:20:16.253464:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Apr 26 14:20:16.253468:   IDENTITY                          IKEv1:             IKEv2:             FIPS             
+Apr 26 14:20:16.253470: Pseudorandom Function (KDF):
+Apr 26 14:20:16.253484:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              NSS          md5
+Apr 26 14:20:16.253488:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Apr 26 14:20:16.253492:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Apr 26 14:20:16.253496:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Apr 26 14:20:16.253499:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Apr 26 14:20:16.253504:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Apr 26 14:20:16.253507: Integrity Algorithm:
+Apr 26 14:20:16.253510:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS          md5, hmac_md5
+Apr 26 14:20:16.253515:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Apr 26 14:20:16.253519:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Apr 26 14:20:16.253523:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Apr 26 14:20:16.253527:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Apr 26 14:20:16.253530:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH                   
+Apr 26 14:20:16.253534:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Apr 26 14:20:16.253538:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Apr 26 14:20:16.253541:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Apr 26 14:20:16.253555: Key Exchange Method (DH):
+Apr 26 14:20:16.253560:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Apr 26 14:20:16.253563:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Apr 26 14:20:16.253566:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Apr 26 14:20:16.253570:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Apr 26 14:20:16.253575:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Apr 26 14:20:16.253580:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Apr 26 14:20:16.253586:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Apr 26 14:20:16.253589:   DH19                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Apr 26 14:20:16.253593:   DH20                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Apr 26 14:20:16.253596:   DH21                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Apr 26 14:20:16.253600:   DH31                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Apr 26 14:20:16.253602: IP Compression:
+Apr 26 14:20:16.253605:   DEFLATE                           IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.253608:   LZS                               IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.253611:   LZJH                              IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.253614: Sequence Number:
+Apr 26 14:20:16.253618:   32_BIT_SEQUENTIAL                 IKEv1:             IKEv2:     ESP AH  FIPS              no
+Apr 26 14:20:16.253625:   PARTIAL_64_BIT_SEQUENTIAL         IKEv1:             IKEv2:     ESP AH  FIPS              yes
+Apr 26 14:20:16.253627: testing CAMELLIA_CBC:
+Apr 26 14:20:16.253631:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:20:16.253692:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:20:16.253719:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:20:16.253746:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:20:16.253772: testing AES_GCM_16:
+Apr 26 14:20:16.253774:   empty string
+Apr 26 14:20:16.253809:   one block
+Apr 26 14:20:16.253844:   two blocks
+Apr 26 14:20:16.253879:   two blocks with associated data
+Apr 26 14:20:16.253910: testing AES_CTR:
+Apr 26 14:20:16.253914:   Encrypting 16 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.253954:   Encrypting 32 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.253981:   Encrypting 36 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.254015:   Encrypting 16 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.254049:   Encrypting 32 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.254080:   Encrypting 36 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.254106:   Encrypting 16 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.254130:   Encrypting 32 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.254156:   Encrypting 36 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.254183: testing AES_CBC:
+Apr 26 14:20:16.254186:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Apr 26 14:20:16.254211:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.254238:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.254264:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.254297: testing AES_XCBC:
+Apr 26 14:20:16.254300:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Apr 26 14:20:16.254429:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Apr 26 14:20:16.254606:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Apr 26 14:20:16.254740:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Apr 26 14:20:16.254872:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Apr 26 14:20:16.255005:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Apr 26 14:20:16.255137:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Apr 26 14:20:16.255365:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Apr 26 14:20:16.255488:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Apr 26 14:20:16.255617:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Apr 26 14:20:16.255803: testing HMAC_MD5:
+Apr 26 14:20:16.255805:   RFC 2104: MD5_HMAC test 1
+Apr 26 14:20:16.255876:   RFC 2104: MD5_HMAC test 2
+Apr 26 14:20:16.255941:   RFC 2104: MD5_HMAC test 3
+Apr 26 14:20:16.256005: testing HMAC_SHA1:
+Apr 26 14:20:16.256007:   CAVP: IKEv2 key derivation with HMAC-SHA1
+Apr 26 14:20:16.256282: 8 CPU cores online
+Apr 26 14:20:16.256285: starting 7 helpers
+Apr 26 14:20:16.256330: helper 1: started
+Apr 26 14:20:16.256352: helper 2: started
+Apr 26 14:20:16.256377: helper 1: seccomp security for helper not supported
+Apr 26 14:20:16.256382: helper 3: started
+Apr 26 14:20:16.256414: helper 3: seccomp security for helper not supported
+Apr 26 14:20:16.256429: helper 4: started
+Apr 26 14:20:16.256465: helper 5: started
+Apr 26 14:20:16.256481: helper 2: seccomp security for helper not supported
+Apr 26 14:20:16.256501: helper 6: seccomp security for helper not supported
+Apr 26 14:20:16.256492: helper 6: started
+Apr 26 14:20:16.256490: helper 5: seccomp security for helper not supported
+Apr 26 14:20:16.256532: helper 7: started
+Apr 26 14:20:16.256540: using Linux xfrm kernel support code on #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026
+Apr 26 14:20:16.256560: helper 4: seccomp security for helper not supported
+Apr 26 14:20:16.256569: setting expire-lifetime= to 30 from '/proc/sys/net/core/xfrm_acq_expires'
+Apr 26 14:20:16.256569: helper 7: seccomp security for helper not supported
+Apr 26 14:20:16.256686: CRL fetch support [disabled]
+Apr 26 14:20:16.256691: DNSSEC support [enabled]
+Apr 26 14:20:16.257152: IPSECKEY support [enabled]
+Apr 26 14:20:16.257208: kernel: directional SA supported by kernel
+Apr 26 14:20:16.257216: netlink response for XFRM_MSG_NEWSA Probe Test: Invalid argument (errno 22)
+Apr 26 14:20:16.257218: kernel: IPTFS ipsec SA error: requires option CONFIG_XFRM_IPTFS
+Apr 26 14:20:16.257228: kernel: MIGRATE ipsec SA error: requires option CONFIG_XFRM_MIGRATE
+Apr 26 14:20:16.257551: seccomp security not supported
+Apr 26 14:20:16.258440: "client": IKE SA proposals (connection add):
+Apr 26 14:20:16.258450: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.258453: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.258455: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.258458: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.258460: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.258495: "client": Child SA proposals (connection add):
+Apr 26 14:20:16.258498: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.258500: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.258501: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.258503: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.258505: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.258525: "client": added IKEv2 connection
+Apr 26 14:20:16.258770: listening for IKE messages
+Apr 26 14:20:16.258806: Kernel supports NIC esp-hw-offload
+Apr 26 14:20:16.258857: adding interface eth0 172.29.0.10:UDP/500
+Apr 26 14:20:16.258864: adding interface eth0 172.29.0.10:UDP/4500 (NAT)
+Apr 26 14:20:16.258872: adding interface lo 127.0.0.1:UDP/500
+Apr 26 14:20:16.258878: adding interface lo 127.0.0.1:UDP/4500 (NAT)
+Apr 26 14:20:16.258887: adding interface lo [::1]:UDP/500
+Apr 26 14:20:16.258893: adding interface lo [::1]:UDP/4500 (NAT)
+Apr 26 14:20:16.258901: "client": oriented IKEv2 connection (local: left=172.29.0.10 remote: right=%any)
+Apr 26 14:20:16.258928: loading secrets from "/etc/ipsec.secrets"
+Apr 26 14:20:16.258938: Pluto is up
+Apr 26 14:20:16.676796: "client": IKE SA proposals (connection add):
+Apr 26 14:20:16.676834: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.676841: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.676846: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.676852: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.676858: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.676926: "client": Child SA proposals (connection add):
+Apr 26 14:20:16.676932: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.676937: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.676941: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.676946: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.676963: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.676998: "client": added oriented IKEv2 connection
+Apr 26 14:20:17.375310: "client"[1] 172.29.0.20 #1: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:20:17.375332: "client"[1] 172.29.0.20 #1: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:20:17.376400: ERROR: "client"[1] 172.29.0.20 #1: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:17.376409: "client"[1] 172.29.0.20 #1: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:20:17.418163: "client"[1] 172.29.0.20 #1: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:20:17.418206: "client"[1] 172.29.0.20: deleting connection instance with peer 172.29.0.20
+Apr 26 14:20:17.876427: "client"[2] 172.29.0.20 #2: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:20:17.876502: "client"[2] 172.29.0.20 #2: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:20:17.879064: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:17.879089: "client"[2] 172.29.0.20 #2: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:20:18.377460: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:18.377551: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:19.378924: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:19.379036: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:21.381953: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:21.382136: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:25.386546: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:25.386746: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:33.393981: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:33.394066: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:20:49.404720: "client"[2] 172.29.0.20 #2: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:20:49.404819: ERROR: "client"[2] 172.29.0.20 #2: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:21.425022: "client"[2] 172.29.0.20 #3: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:21:21.425068: "client"[2] 172.29.0.20 #3: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:21:21.425904: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:21.425921: "client"[2] 172.29.0.20 #3: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:21:21.926009: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:21.926126: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:22.427268: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:22.427498: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:23.428548: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:23.428683: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:25.430962: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:25.431125: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:29.435259: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:29.435328: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:37.440069: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:37.440254: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:21:53.456672: "client"[2] 172.29.0.20 #3: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:21:53.457133: ERROR: "client"[2] 172.29.0.20 #3: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:30.474915: "client"[2] 172.29.0.20 #4: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:22:30.474997: "client"[2] 172.29.0.20 #4: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:22:30.476926: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:30.476952: "client"[2] 172.29.0.20 #4: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:22:30.971879: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:30.971984: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:31.473000: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:31.473130: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:32.474378: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:32.474456: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:34.476985: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:34.477053: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:38.476445: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:38.476578: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:22:46.484613: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:22:46.484682: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:02.488323: "client"[2] 172.29.0.20 #4: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:02.488450: ERROR: "client"[2] 172.29.0.20 #4: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:37.880381: "client"[2] 172.29.0.20 #2: deleting incomplete state after 200 seconds
+Apr 26 14:23:37.880539: "client"[2] 172.29.0.20 #2: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:23:44.515918: "client"[2] 172.29.0.20 #5: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:23:44.515991: "client"[2] 172.29.0.20 #5: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:23:44.517772: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:44.517793: "client"[2] 172.29.0.20 #5: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:23:45.017309: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:45.017361: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:45.517840: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:45.517934: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:46.518888: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:46.518913: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:48.521429: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:48.521553: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:23:52.524390: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:23:52.524548: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:24:00.527901: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:24:00.527980: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:24:16.531098: "client"[2] 172.29.0.20 #5: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:24:16.531130: ERROR: "client"[2] 172.29.0.20 #5: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:24:41.431264: "client"[2] 172.29.0.20 #3: deleting incomplete state after 200 seconds
+Apr 26 14:24:41.431328: "client"[2] 172.29.0.20 #3: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:25:03.552218: "client"[2] 172.29.0.20 #6: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:25:03.552312: "client"[2] 172.29.0.20 #6: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:25:03.554425: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:03.554453: "client"[2] 172.29.0.20 #6: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:25:04.053397: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:04.053542: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:04.559731: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:04.559807: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:05.563498: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:05.563592: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:07.565784: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:07.565819: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:11.571246: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:11.571474: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:19.575312: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:19.575442: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:35.591923: "client"[2] 172.29.0.20 #6: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:25:35.592175: ERROR: "client"[2] 172.29.0.20 #6: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:25:50.489745: "client"[2] 172.29.0.20 #4: deleting incomplete state after 200 seconds
+Apr 26 14:25:50.490100: "client"[2] 172.29.0.20 #4: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:26:27.618587: "client"[2] 172.29.0.20 #7: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:26:27.618673: "client"[2] 172.29.0.20 #7: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:26:27.621432: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:27.621475: "client"[2] 172.29.0.20 #7: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:26:28.123521: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:28.123566: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:28.631799: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:28.631880: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:29.635877: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:29.636013: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:31.643528: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:31.643686: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:35.648098: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:35.648446: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:43.655467: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:43.655587: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:26:59.663114: "client"[2] 172.29.0.20 #7: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:26:59.663197: ERROR: "client"[2] 172.29.0.20 #7: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:27:04.520393: "client"[2] 172.29.0.20 #5: deleting incomplete state after 200 seconds
+Apr 26 14:27:04.520505: "client"[2] 172.29.0.20 #5: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:27:56.690305: "client"[2] 172.29.0.20 #8: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:27:56.690389: "client"[2] 172.29.0.20 #8: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:27:56.692618: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:27:56.692654: "client"[2] 172.29.0.20 #8: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:27:57.191233: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:27:57.191303: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:27:57.695624: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:27:57.695685: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:27:58.699305: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:27:58.699355: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:28:00.703651: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:28:00.703679: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:28:04.708166: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:28:04.708289: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:28:12.716499: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:28:12.716604: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:28:23.558969: "client"[2] 172.29.0.20 #6: deleting incomplete state after 200 seconds
+Apr 26 14:28:23.559039: "client"[2] 172.29.0.20 #6: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:28:28.729317: "client"[2] 172.29.0.20 #8: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:28:28.729438: ERROR: "client"[2] 172.29.0.20 #8: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:30.750929: "client"[2] 172.29.0.20 #9: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:29:30.751007: "client"[2] 172.29.0.20 #9: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=M...
+Apr 26 14:29:30.752954: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:30.752981: "client"[2] 172.29.0.20 #9: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:29:31.251351: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:31.251459: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:31.755675: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:31.755746: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:32.757385: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:32.757490: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:34.763101: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:34.763191: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:38.766746: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:38.766888: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:46.775373: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:29:46.775492: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:29:47.619722: "client"[2] 172.29.0.20 #7: deleting incomplete state after 200 seconds
+Apr 26 14:29:47.619832: "client"[2] 172.29.0.20 #7: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:30:02.784792: "client"[2] 172.29.0.20 #9: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:30:02.784876: ERROR: "client"[2] 172.29.0.20 #9: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:09.825168: "client"[2] 172.29.0.20 #10: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:31:09.825315: "client"[2] 172.29.0.20 #10: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:31:09.827806: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:09.827835: "client"[2] 172.29.0.20 #10: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:31:10.325805: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:10.325890: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:10.831008: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:10.831076: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:11.835090: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:11.835224: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:13.837621: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:13.837736: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:16.695787: "client"[2] 172.29.0.20 #8: deleting incomplete state after 200 seconds
+Apr 26 14:31:16.695901: "client"[2] 172.29.0.20 #8: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:31:17.843717: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:17.843795: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:25.852427: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:25.852590: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:31:41.862038: "client"[2] 172.29.0.20 #10: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:31:41.862128: ERROR: "client"[2] 172.29.0.20 #10: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:32:50.764708: "client"[2] 172.29.0.20 #9: deleting incomplete state after 200 seconds
+Apr 26 14:32:50.764805: "client"[2] 172.29.0.20 #9: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:32:53.894591: "client"[2] 172.29.0.20 #11: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:32:53.894650: "client"[2] 172.29.0.20 #11: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:32:53.897124: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:32:53.897155: "client"[2] 172.29.0.20 #11: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:32:54.400010: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:32:54.400098: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:32:54.907556: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:32:54.907666: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:32:55.911461: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:32:55.911534: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:32:57.919518: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:32:57.919555: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:33:01.923808: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:33:01.923857: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:33:09.932335: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:33:09.932423: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:33:25.942676: "client"[2] 172.29.0.20 #11: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:33:25.942774: ERROR: "client"[2] 172.29.0.20 #11: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:29.839656: "client"[2] 172.29.0.20 #10: deleting incomplete state after 200 seconds
+Apr 26 14:34:29.839792: "client"[2] 172.29.0.20 #10: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:34:42.957352: "client"[2] 172.29.0.20 #12: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:34:42.957427: "client"[2] 172.29.0.20 #12: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:34:42.959633: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:42.959658: "client"[2] 172.29.0.20 #12: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:34:43.458428: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:43.458554: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:43.959324: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:43.959395: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:44.964005: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:44.964061: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:46.967452: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:46.967514: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:50.975327: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:50.975407: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:34:58.982095: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:34:58.982176: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:35:14.998997: "client"[2] 172.29.0.20 #12: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:35:14.999200: ERROR: "client"[2] 172.29.0.20 #12: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:13.914822: "client"[2] 172.29.0.20 #11: deleting incomplete state after 200 seconds
+Apr 26 14:36:13.914858: "client"[2] 172.29.0.20 #11: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:36:37.010950: "client"[2] 172.29.0.20 #13: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:36:37.011023: "client"[2] 172.29.0.20 #13: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:36:37.012921: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:37.012935: "client"[2] 172.29.0.20 #13: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:36:37.511732: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:37.511796: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:38.012535: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:38.012620: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:39.013934: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:39.014030: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:41.016406: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:41.016498: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:45.020734: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:45.020803: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:36:53.028799: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:36:53.028889: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:37:09.037127: "client"[2] 172.29.0.20 #13: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:37:09.037231: ERROR: "client"[2] 172.29.0.20 #13: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:02.968507: "client"[2] 172.29.0.20 #12: deleting incomplete state after 200 seconds
+Apr 26 14:38:02.968616: "client"[2] 172.29.0.20 #12: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:38:36.057390: "client"[2] 172.29.0.20 #14: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:38:36.057472: "client"[2] 172.29.0.20 #14: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:38:36.059599: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:36.059630: "client"[2] 172.29.0.20 #14: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:38:36.555494: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:36.555585: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:37.056764: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:37.056889: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:38.058257: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:38.058367: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:40.060701: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:40.060780: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:44.065151: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:44.065250: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:38:52.069968: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:38:52.070177: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:39:08.083341: "client"[2] 172.29.0.20 #14: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:39:08.083458: ERROR: "client"[2] 172.29.0.20 #14: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:39:57.012185: "client"[2] 172.29.0.20 #13: deleting incomplete state after 200 seconds
+Apr 26 14:39:57.012265: "client"[2] 172.29.0.20 #13: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:40:40.091815: "client"[2] 172.29.0.20 #15: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:40:40.091920: "client"[2] 172.29.0.20 #15: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:40:40.094096: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:40.094113: "client"[2] 172.29.0.20 #15: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:40:40.592762: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:40.592833: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:41.093590: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:41.093662: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:42.095135: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:42.095243: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:44.097828: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:44.097930: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:48.102170: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:48.102266: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:40:56.110446: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:40:56.110568: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:41:12.111471: "client"[2] 172.29.0.20 #15: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:41:12.111618: ERROR: "client"[2] 172.29.0.20 #15: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:41:56.069116: "client"[2] 172.29.0.20 #14: deleting incomplete state after 200 seconds
+Apr 26 14:41:56.069223: "client"[2] 172.29.0.20 #14: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:42:49.132330: "client"[2] 172.29.0.20 #16: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:42:49.132405: "client"[2] 172.29.0.20 #16: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:42:49.134422: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:42:49.134450: "client"[2] 172.29.0.20 #16: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:42:49.633451: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:42:49.633554: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:42:50.134328: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:42:50.134416: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:42:51.135414: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:42:51.135451: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:42:53.138220: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:42:53.138339: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:42:57.140055: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:42:57.140138: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:43:05.148828: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:43:05.148953: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:43:21.154281: "client"[2] 172.29.0.20 #16: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:43:21.154368: ERROR: "client"[2] 172.29.0.20 #16: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:44:00.094053: "client"[2] 172.29.0.20 #15: deleting incomplete state after 200 seconds
+Apr 26 14:44:00.094143: "client"[2] 172.29.0.20 #15: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:45:03.179660: "client"[2] 172.29.0.20 #17: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:45:03.179771: "client"[2] 172.29.0.20 #17: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:45:03.182882: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:03.182926: "client"[2] 172.29.0.20 #17: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:45:03.680621: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:03.680721: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:04.181470: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:04.181542: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:05.182822: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:05.182887: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:07.185192: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:07.185303: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:11.190031: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:11.190170: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:19.194849: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:19.194946: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:45:35.207429: "client"[2] 172.29.0.20 #17: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:45:35.207641: ERROR: "client"[2] 172.29.0.20 #17: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:46:09.142340: "client"[2] 172.29.0.20 #16: deleting incomplete state after 200 seconds
+Apr 26 14:46:09.142546: "client"[2] 172.29.0.20 #16: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:47:22.228511: "client"[2] 172.29.0.20 #18: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:47:22.228578: "client"[2] 172.29.0.20 #18: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:47:22.230600: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:22.230628: "client"[2] 172.29.0.20 #18: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:47:22.729377: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:22.729443: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:23.230586: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:23.230742: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:24.231506: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:24.231535: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:26.233925: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:26.234002: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:30.238689: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:30.238878: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:38.242162: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:38.242252: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:47:54.259050: "client"[2] 172.29.0.20 #18: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:47:54.259165: ERROR: "client"[2] 172.29.0.20 #18: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:48:23.190827: "client"[2] 172.29.0.20 #17: deleting incomplete state after 200 seconds
+Apr 26 14:48:23.190915: "client"[2] 172.29.0.20 #17: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:49:46.281406: "client"[2] 172.29.0.20 #19: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:49:46.281493: "client"[2] 172.29.0.20 #19: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:49:46.283849: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:49:46.283879: "client"[2] 172.29.0.20 #19: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:49:46.782224: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:49:46.782309: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:49:47.283311: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:49:47.283429: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:49:48.284405: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:49:48.284463: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:49:50.286824: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:49:50.286942: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:49:54.291310: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:49:54.291397: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:50:02.298923: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:50:02.299069: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:50:18.303150: "client"[2] 172.29.0.20 #19: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:50:18.303605: ERROR: "client"[2] 172.29.0.20 #19: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:50:42.233887: "client"[2] 172.29.0.20 #18: deleting incomplete state after 200 seconds
+Apr 26 14:50:42.233957: "client"[2] 172.29.0.20 #18: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:52:15.323232: "client"[2] 172.29.0.20 #20: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:52:15.323337: "client"[2] 172.29.0.20 #20: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:52:15.325933: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:15.325967: "client"[2] 172.29.0.20 #20: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:52:15.824421: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:15.824531: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:16.325397: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:16.325512: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:17.324992: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:17.325063: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:19.327418: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:19.327507: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:23.332541: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:23.332744: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:31.340900: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:31.341054: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:52:47.351222: "client"[2] 172.29.0.20 #20: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:52:47.351318: ERROR: "client"[2] 172.29.0.20 #20: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:53:06.291882: "client"[2] 172.29.0.20 #19: deleting incomplete state after 200 seconds
+Apr 26 14:53:06.291970: "client"[2] 172.29.0.20 #19: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:54:49.374364: "client"[2] 172.29.0.20 #21: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:54:49.374505: "client"[2] 172.29.0.20 #21: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:54:49.376404: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:54:49.376431: "client"[2] 172.29.0.20 #21: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:54:49.875148: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:54:49.875214: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:54:50.376328: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:54:50.376427: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:54:51.377313: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:54:51.377347: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:54:53.379840: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:54:53.379935: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:54:57.381192: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:54:57.381271: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:55:05.389730: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:55:05.389853: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:55:21.390299: "client"[2] 172.29.0.20 #21: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:55:21.390426: ERROR: "client"[2] 172.29.0.20 #21: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:55:35.339532: "client"[2] 172.29.0.20 #20: deleting incomplete state after 200 seconds
+Apr 26 14:55:35.339616: "client"[2] 172.29.0.20 #20: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 14:57:28.423363: "client"[2] 172.29.0.20 #22: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 14:57:28.423451: "client"[2] 172.29.0.20 #22: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 14:57:28.425397: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:28.425426: "client"[2] 172.29.0.20 #22: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 14:57:28.924261: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:28.924342: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:29.425435: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:29.425550: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:30.426658: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:30.426756: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:32.428927: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:32.429014: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:36.429586: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:36.429696: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:57:44.438277: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:57:44.438410: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:58:00.442969: "client"[2] 172.29.0.20 #22: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 14:58:00.443078: ERROR: "client"[2] 172.29.0.20 #22: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 14:58:09.383069: "client"[2] 172.29.0.20 #21: deleting incomplete state after 200 seconds
+Apr 26 14:58:09.383095: "client"[2] 172.29.0.20 #21: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 15:00:12.480570: "client"[2] 172.29.0.20 #23: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 15:00:12.480642: "client"[2] 172.29.0.20 #23: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 15:00:12.482791: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:12.482821: "client"[2] 172.29.0.20 #23: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 15:00:12.981577: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:12.981656: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:13.487805: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:13.487907: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:14.491466: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:14.491542: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:16.494149: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:16.494274: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:20.498626: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:20.498748: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:28.506910: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:28.506990: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:44.519611: "client"[2] 172.29.0.20 #23: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:00:44.519843: ERROR: "client"[2] 172.29.0.20 #23: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:00:48.427961: "client"[2] 172.29.0.20 #22: deleting incomplete state after 200 seconds
+Apr 26 15:00:48.428044: "client"[2] 172.29.0.20 #22: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 15:03:01.532210: "client"[2] 172.29.0.20 #24: processing IKE_SA_INIT request from 172.29.0.20:UDP/500 containing SA,KE,Ni,N(IKEV2_FRAGMENTATION_SUPPORTED),N(NAT_DETECTION_SOURCE_IP),N(NAT_DETECTION_DESTINATION_IP)
+Apr 26 15:03:01.532323: "client"[2] 172.29.0.20 #24: proposal 1:IKE=AES_GCM_16_256-HMAC_SHA2_512-ECP_256 chosen from remote proposals 1:IKE:ENCR=AES_GCM_16_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192[first-match] 2:IKE:ENCR=AES_GCM_16_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 3:IKE:ENCR=CHACHA20_POLY1305;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 4:IKE:ENCR=AES_CBC_256;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=MODP2048;KEM=MODP8192 5:IKE:ENCR=AES_CBC_128;PRF=HMAC_SHA2_512;PRF=HMAC_SHA2_256;INTEG=HMAC_SHA2_512_256;INTEG=HMAC_SHA2_256_128;KEM=ECP_256;KEM=ECP_384;KEM=ECP_521;KEM=CURVE25519;KEM=MODP4096;KEM=MODP3072;KEM=...
+Apr 26 15:03:01.535330: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:01.535457: "client"[2] 172.29.0.20 #24: sent IKE_SA_INIT response to 172.29.0.20:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, expecting IKE_AUTH, IKE_INTERMEDIATE, or IKE_AUTH (EAP)
+Apr 26 15:03:02.035636: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:02.035781: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:02.538743: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:02.538777: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:03.543731: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:03.543820: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:05.547175: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:05.547260: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:09.550728: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:09.550783: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:17.554712: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:17.554812: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)
+Apr 26 15:03:32.497958: "client"[2] 172.29.0.20 #23: deleting incomplete state after 200 seconds
+Apr 26 15:03:32.498044: "client"[2] 172.29.0.20 #23: deleting IKE SA (sent IKE_SA_INIT response)
+Apr 26 15:03:33.559052: "client"[2] 172.29.0.20 #24: received duplicate IKE_SA_INIT request; retransmitting response
+Apr 26 15:03:33.559110: ERROR: "client"[2] 172.29.0.20 #24: send on eth0 from 172.29.0.10:500 to 172.29.0.20:500 using UDP failed in IKE_SA_INIT response: Operation not permitted (errno 1)

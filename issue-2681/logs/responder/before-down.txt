@@ -1,0 +1,1 @@
+#1: "client"[1] 172.29.0.20:500 sent IKE_SA_INIT response; DISCARD in 199s; idle;

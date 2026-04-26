@@ -1,0 +1,9 @@
+OBJ.*
+.git
+testing/
+doc/
+CHANGES
+CREDITS
+*.rpm
+*.deb
+*.tar.gz

@@ -1,0 +1,44 @@
+services:
+  responder:
+    build:
+      context: /home/ubuntu/libreswan
+      dockerfile: /home/ubuntu/libreswan-ipsec/issue-2681/Dockerfile
+    image: issue2681-libreswan
+    container_name: issue2681-responder
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    ulimits:
+      core: -1
+    networks:
+      issue2681-net:
+        ipv4_address: 172.29.0.10
+    volumes:
+      - ./configs/responder/ipsec.conf:/etc/ipsec.conf:ro
+      - ./configs/responder/ipsec.secrets:/etc/ipsec.secrets:ro
+      - ./logs/responder:/var/log/libreswan
+
+  initiator:
+    image: issue2681-libreswan
+    container_name: issue2681-initiator
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    networks:
+      issue2681-net:
+        ipv4_address: 172.29.0.20
+    volumes:
+      - ./configs/initiator/ipsec.conf:/etc/ipsec.conf:ro
+      - ./configs/initiator/ipsec.secrets:/etc/ipsec.secrets:ro
+      - ./logs/initiator:/var/log/libreswan
+    depends_on:
+      - responder
+
+networks:
+  issue2681-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.0.0/24

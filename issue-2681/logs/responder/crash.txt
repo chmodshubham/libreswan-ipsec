@@ -1,0 +1,4 @@
+=== starting pluto ===
+=== pluto ready (pid=8) ===
+WARNING: ipsec auto has been deprecated
+"client": added oriented IKEv2 connection

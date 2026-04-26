@@ -1,0 +1,1097 @@
+Apr 26 14:12:32.501136: Starting Pluto (Libreswan Version 5.3 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-KDF) UNBOUND LDNS DNSSEC IPSECKEY LIBCAP_NG AUTH_PAM CURL(non-NSS) NFTABLES CAT NFLOG) pid:8
+Apr 26 14:12:32.501159: operating system: Linux 5.15.0 [Linux 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64]
+Apr 26 14:12:32.501163: using dns-resolver=file
+Apr 26 14:12:32.501165: core dump dir: /run/pluto
+Apr 26 14:12:32.501167: secrets file: /etc/ipsec.secrets
+Apr 26 14:12:32.501237: Initializing NSS using read-only database "sql:/var/lib/ipsec/nss"
+Apr 26 14:12:32.502775: FIPS Mode: OFF
+Apr 26 14:12:32.502784: NSS crypto library initialized
+Apr 26 14:12:32.502803: FIPS mode disabled for pluto daemon
+Apr 26 14:12:32.502805: NSS: OCSP [disabled]
+Apr 26 14:12:32.502806: FIPS HMAC integrity support [not required]
+Apr 26 14:12:32.502874: libcap-ng support [enabled]
+Apr 26 14:12:32.502876: Linux audit support [disabled]
+Apr 26 14:12:32.502877: leak-detective [enabled]
+Apr 26 14:12:32.502879: NSS crypto [enabled]
+Apr 26 14:12:32.502888: XAUTH PAM support [enabled]
+Apr 26 14:12:32.502895: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Apr 26 14:12:32.502919: log rate limiting [enabled]
+Apr 26 14:12:32.502921: NAT-Traversal: keep-alive period 20s
+Apr 26 14:12:32.571053: IPsec Interface [managed]
+Apr 26 14:12:32.571225: refreshed session resume keys, issuing key 1
+Apr 26 14:12:32.571397: Encryption Algorithm (cipher):
+Apr 26 14:12:32.571411:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Apr 26 14:12:32.571419:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Apr 26 14:12:32.571426:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Apr 26 14:12:32.571434:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Apr 26 14:12:32.571440:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP                      
+Apr 26 14:12:32.571447:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Apr 26 14:12:32.571455:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm, aes_gcm_c
+Apr 26 14:12:32.571461:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_b
+Apr 26 14:12:32.571468:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_a
+Apr 26 14:12:32.571475:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Apr 26 14:12:32.571482:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Apr 26 14:12:32.571489:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Apr 26 14:12:32.571494:   NULL               []             IKEv1:     ESP     IKEv2:     ESP          NULL        
+Apr 26 14:12:32.571501:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Apr 26 14:12:32.571506: Hashing Algorithm:
+Apr 26 14:12:32.571512:   MD5                               IKEv1: IKE         IKEv2:                  NSS         
+Apr 26 14:12:32.571517:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Apr 26 14:12:32.571524:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Apr 26 14:12:32.571529:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Apr 26 14:12:32.571535:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Apr 26 14:12:32.571540:   IDENTITY                          IKEv1:             IKEv2:             FIPS             
+Apr 26 14:12:32.571544: Pseudorandom Function (KDF):
+Apr 26 14:12:32.571568:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              NSS          md5
+Apr 26 14:12:32.571574:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Apr 26 14:12:32.571580:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Apr 26 14:12:32.571586:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Apr 26 14:12:32.571592:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Apr 26 14:12:32.571598:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Apr 26 14:12:32.571602: Integrity Algorithm:
+Apr 26 14:12:32.571609:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS          md5, hmac_md5
+Apr 26 14:12:32.571616:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Apr 26 14:12:32.571623:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Apr 26 14:12:32.571629:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Apr 26 14:12:32.571637:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Apr 26 14:12:32.571642:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH                   
+Apr 26 14:12:32.571650:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Apr 26 14:12:32.571655:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Apr 26 14:12:32.571661:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Apr 26 14:12:32.571665: Key Exchange Method (DH):
+Apr 26 14:12:32.571671:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Apr 26 14:12:32.571677:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Apr 26 14:12:32.571683:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Apr 26 14:12:32.571688:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Apr 26 14:12:32.571693:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Apr 26 14:12:32.571698:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Apr 26 14:12:32.571704:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Apr 26 14:12:32.571710:   DH19                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Apr 26 14:12:32.571715:   DH20                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Apr 26 14:12:32.571721:   DH21                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Apr 26 14:12:32.571727:   DH31                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Apr 26 14:12:32.571731: IP Compression:
+Apr 26 14:12:32.571736:   DEFLATE                           IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS             
+Apr 26 14:12:32.571742:   LZS                               IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:12:32.571747:   LZJH                              IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:12:32.571751: Sequence Number:
+Apr 26 14:12:32.571757:   32_BIT_SEQUENTIAL                 IKEv1:             IKEv2:     ESP AH  FIPS              no
+Apr 26 14:12:32.571769:   PARTIAL_64_BIT_SEQUENTIAL         IKEv1:             IKEv2:     ESP AH  FIPS              yes
+Apr 26 14:12:32.571774: testing CAMELLIA_CBC:
+Apr 26 14:12:32.571778:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:12:32.571876:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:12:32.571952:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:12:32.572002:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:12:32.572047: testing AES_GCM_16:
+Apr 26 14:12:32.572052:   empty string
+Apr 26 14:12:32.572107:   one block
+Apr 26 14:12:32.572154:   two blocks
+Apr 26 14:12:32.572202:   two blocks with associated data
+Apr 26 14:12:32.572250: testing AES_CTR:
+Apr 26 14:12:32.572254:   Encrypting 16 octets using AES-CTR with 128-bit key
+Apr 26 14:12:32.572302:   Encrypting 32 octets using AES-CTR with 128-bit key
+Apr 26 14:12:32.572346:   Encrypting 36 octets using AES-CTR with 128-bit key
+Apr 26 14:12:32.572390:   Encrypting 16 octets using AES-CTR with 192-bit key
+Apr 26 14:12:32.572430:   Encrypting 32 octets using AES-CTR with 192-bit key
+Apr 26 14:12:32.572472:   Encrypting 36 octets using AES-CTR with 192-bit key
+Apr 26 14:12:32.572515:   Encrypting 16 octets using AES-CTR with 256-bit key
+Apr 26 14:12:32.572564:   Encrypting 32 octets using AES-CTR with 256-bit key
+Apr 26 14:12:32.572622:   Encrypting 36 octets using AES-CTR with 256-bit key
+Apr 26 14:12:32.572683: testing AES_CBC:
+Apr 26 14:12:32.572688:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Apr 26 14:12:32.572730:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Apr 26 14:12:32.572773:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Apr 26 14:12:32.572817:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Apr 26 14:12:32.572870: testing AES_XCBC:
+Apr 26 14:12:32.572875:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Apr 26 14:12:32.573089:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Apr 26 14:12:32.573297:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Apr 26 14:12:32.573494:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Apr 26 14:12:32.573697:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Apr 26 14:12:32.573916:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Apr 26 14:12:32.574110:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Apr 26 14:12:32.574506:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Apr 26 14:12:32.574704:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Apr 26 14:12:32.574907:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Apr 26 14:12:32.575199: testing HMAC_MD5:
+Apr 26 14:12:32.575203:   RFC 2104: MD5_HMAC test 1
+Apr 26 14:12:32.575322:   RFC 2104: MD5_HMAC test 2
+Apr 26 14:12:32.575430:   RFC 2104: MD5_HMAC test 3
+Apr 26 14:12:32.575539: testing HMAC_SHA1:
+Apr 26 14:12:32.575543:   CAVP: IKEv2 key derivation with HMAC-SHA1
+Apr 26 14:12:32.576024: 8 CPU cores online
+Apr 26 14:12:32.576029: starting 7 helpers
+Apr 26 14:12:32.576103: helper 1: started
+Apr 26 14:12:32.576139: helper 2: started
+Apr 26 14:12:32.576182: helper 3: started
+Apr 26 14:12:32.576213: helper 4: started
+Apr 26 14:12:32.576245: helper 5: started
+Apr 26 14:12:32.576261: helper 1: seccomp security for helper not supported
+Apr 26 14:12:32.576279: helper 6: started
+Apr 26 14:12:32.576320: helper 2: seccomp security for helper not supported
+Apr 26 14:12:32.576383: helper 3: seccomp security for helper not supported
+Apr 26 14:12:32.576325: helper 6: seccomp security for helper not supported
+Apr 26 14:12:32.576375: helper 7: started
+Apr 26 14:12:32.576445: helper 7: seccomp security for helper not supported
+Apr 26 14:12:32.576452: using Linux xfrm kernel support code on #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026
+Apr 26 14:12:32.576481: helper 5: seccomp security for helper not supported
+Apr 26 14:12:32.576391: helper 4: seccomp security for helper not supported
+Apr 26 14:12:32.576520: setting expire-lifetime= to 30 from '/proc/sys/net/core/xfrm_acq_expires'
+Apr 26 14:12:32.576730: CRL fetch support [disabled]
+Apr 26 14:12:32.576736: DNSSEC support [enabled]
+Apr 26 14:12:32.577579: IPSECKEY support [enabled]
+Apr 26 14:12:32.577678: kernel: directional SA supported by kernel
+Apr 26 14:12:32.577692: netlink response for XFRM_MSG_NEWSA Probe Test: Invalid argument (errno 22)
+Apr 26 14:12:32.577696: kernel: IPTFS ipsec SA error: requires option CONFIG_XFRM_IPTFS
+Apr 26 14:12:32.577715: kernel: MIGRATE ipsec SA error: requires option CONFIG_XFRM_MIGRATE
+Apr 26 14:12:32.578283: seccomp security not supported
+Apr 26 14:12:32.579721: "client": IKE SA proposals (connection add):
+Apr 26 14:12:32.579740: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:32.579745: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:32.579749: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:32.579754: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:32.579758: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:32.579806: "client": Child SA proposals (connection add):
+Apr 26 14:12:32.579810: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:32.579814: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:32.579817: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:32.579821: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:12:32.579824: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:12:32.579853: "client": added IKEv2 connection
+Apr 26 14:12:32.580279: listening for IKE messages
+Apr 26 14:12:32.580345: Kernel supports NIC esp-hw-offload
+Apr 26 14:12:32.580431: adding interface eth0 172.29.0.20:UDP/500
+Apr 26 14:12:32.580445: adding interface eth0 172.29.0.20:UDP/4500 (NAT)
+Apr 26 14:12:32.580457: adding interface lo 127.0.0.1:UDP/500
+Apr 26 14:12:32.580468: adding interface lo 127.0.0.1:UDP/4500 (NAT)
+Apr 26 14:12:32.580483: adding interface lo [::1]:UDP/500
+Apr 26 14:12:32.580494: adding interface lo [::1]:UDP/4500 (NAT)
+Apr 26 14:12:32.580509: "client": oriented IKEv2 connection (local: left=172.29.0.20 remote: right=172.29.0.10)
+Apr 26 14:12:32.580549: loading secrets from "/etc/ipsec.secrets"
+Apr 26 14:12:32.580563: Pluto is up
+Apr 26 14:12:33.004236: "client": IKE SA proposals (connection add):
+Apr 26 14:12:33.004264: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:33.004271: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:33.004276: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:33.004281: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:33.004287: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:12:33.004347: "client": Child SA proposals (connection add):
+Apr 26 14:12:33.004353: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:33.004357: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:33.004361: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:12:33.004366: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:12:33.004381: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:12:33.004412: "client": added oriented IKEv2 connection
+Apr 26 14:12:33.588420: "client" #1: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:12:33.589192: "client" #1: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:12:33.590715: "client" #1: processed IKE_SA_INIT response from 172.29.0.10:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, initiating IKE_AUTH
+Apr 26 14:12:33.590747: "client" #1: WARNING: '@initiator' PSK length of 15 bytes is too short for PRF HMAC_SHA2_512 in FIPS mode (32 bytes required)
+Apr 26 14:12:33.590833: "client" #1: sent IKE_AUTH request to 172.29.0.10:UDP/500 with shared-key-mac and FQDN '@initiator'; Child SA #2 {ESP <0xc6f34af2} [172.29.0.20/32===172.29.0.10/32]
+Apr 26 14:12:33.601474: "client" #1: processing IKE_AUTH response from 172.29.0.10:UDP/500 containing SK{IDr,AUTH,SA,TSi,TSr}
+Apr 26 14:12:33.601507: "client" #1: WARNING: '@initiator' PSK length of 15 bytes is too short for PRF HMAC_SHA2_512 in FIPS mode (32 bytes required)
+Apr 26 14:12:33.601530: "client" #1: initiator established IKE SA; authenticated peer using authby=secret and FQDN '@responder'
+Apr 26 14:12:33.611607: "client" #2: initiator established Child SA using #1; IPsec tunnel [172.29.0.20/32===172.29.0.10/32] {ESP/ESN=>0xf78c50c2 <0xc6f34af2 xfrm=AES_GCM_16_256 DPD=passive}
+Apr 26 14:13:26.306211: Starting Pluto (Libreswan Version 5.3 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-KDF) UNBOUND LDNS DNSSEC IPSECKEY LIBCAP_NG AUTH_PAM CURL(non-NSS) NFTABLES CAT NFLOG) pid:8
+Apr 26 14:13:26.306233: operating system: Linux 5.15.0 [Linux 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64]
+Apr 26 14:13:26.306237: using dns-resolver=file
+Apr 26 14:13:26.306238: core dump dir: /run/pluto
+Apr 26 14:13:26.306240: secrets file: /etc/ipsec.secrets
+Apr 26 14:13:26.306301: Initializing NSS using read-only database "sql:/var/lib/ipsec/nss"
+Apr 26 14:13:26.307507: FIPS Mode: OFF
+Apr 26 14:13:26.307515: NSS crypto library initialized
+Apr 26 14:13:26.307527: FIPS mode disabled for pluto daemon
+Apr 26 14:13:26.307529: NSS: OCSP [disabled]
+Apr 26 14:13:26.307530: FIPS HMAC integrity support [not required]
+Apr 26 14:13:26.307586: libcap-ng support [enabled]
+Apr 26 14:13:26.307587: Linux audit support [disabled]
+Apr 26 14:13:26.307589: leak-detective [enabled]
+Apr 26 14:13:26.307590: NSS crypto [enabled]
+Apr 26 14:13:26.307590: XAUTH PAM support [enabled]
+Apr 26 14:13:26.307596: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Apr 26 14:13:26.307615: log rate limiting [enabled]
+Apr 26 14:13:26.307616: NAT-Traversal: keep-alive period 20s
+Apr 26 14:13:26.348291: IPsec Interface [managed]
+Apr 26 14:13:26.348354: refreshed session resume keys, issuing key 1
+Apr 26 14:13:26.348403: Encryption Algorithm (cipher):
+Apr 26 14:13:26.348407:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Apr 26 14:13:26.348409:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Apr 26 14:13:26.348411:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Apr 26 14:13:26.348413:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Apr 26 14:13:26.348414:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP                      
+Apr 26 14:13:26.348416:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Apr 26 14:13:26.348418:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm, aes_gcm_c
+Apr 26 14:13:26.348420:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_b
+Apr 26 14:13:26.348422:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_a
+Apr 26 14:13:26.348429:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Apr 26 14:13:26.348431:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Apr 26 14:13:26.348433:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Apr 26 14:13:26.348434:   NULL               []             IKEv1:     ESP     IKEv2:     ESP          NULL        
+Apr 26 14:13:26.348436:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Apr 26 14:13:26.348437: Hashing Algorithm:
+Apr 26 14:13:26.348439:   MD5                               IKEv1: IKE         IKEv2:                  NSS         
+Apr 26 14:13:26.348440:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Apr 26 14:13:26.348442:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Apr 26 14:13:26.348443:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Apr 26 14:13:26.348444:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Apr 26 14:13:26.348446:   IDENTITY                          IKEv1:             IKEv2:             FIPS             
+Apr 26 14:13:26.348447: Pseudorandom Function (KDF):
+Apr 26 14:13:26.348448:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              NSS          md5
+Apr 26 14:13:26.348450:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Apr 26 14:13:26.348451:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Apr 26 14:13:26.348453:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Apr 26 14:13:26.348454:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Apr 26 14:13:26.348455:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Apr 26 14:13:26.348457: Integrity Algorithm:
+Apr 26 14:13:26.348458:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS          md5, hmac_md5
+Apr 26 14:13:26.348460:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Apr 26 14:13:26.348462:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Apr 26 14:13:26.348463:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Apr 26 14:13:26.348465:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Apr 26 14:13:26.348466:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH                   
+Apr 26 14:13:26.348468:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Apr 26 14:13:26.348470:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Apr 26 14:13:26.348471:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Apr 26 14:13:26.348472: Key Exchange Method (DH):
+Apr 26 14:13:26.348474:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Apr 26 14:13:26.348475:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Apr 26 14:13:26.348477:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Apr 26 14:13:26.348478:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Apr 26 14:13:26.348481:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Apr 26 14:13:26.348482:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Apr 26 14:13:26.348484:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Apr 26 14:13:26.348485:   DH19                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Apr 26 14:13:26.348487:   DH20                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Apr 26 14:13:26.348488:   DH21                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Apr 26 14:13:26.348489:   DH31                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Apr 26 14:13:26.348490: IP Compression:
+Apr 26 14:13:26.348492:   DEFLATE                           IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS             
+Apr 26 14:13:26.348493:   LZS                               IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:13:26.348494:   LZJH                              IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:13:26.348495: Sequence Number:
+Apr 26 14:13:26.348497:   32_BIT_SEQUENTIAL                 IKEv1:             IKEv2:     ESP AH  FIPS              no
+Apr 26 14:13:26.348499:   PARTIAL_64_BIT_SEQUENTIAL         IKEv1:             IKEv2:     ESP AH  FIPS              yes
+Apr 26 14:13:26.348500: testing CAMELLIA_CBC:
+Apr 26 14:13:26.348501:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:13:26.348532:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:13:26.348544:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:13:26.348565:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:13:26.348579: testing AES_GCM_16:
+Apr 26 14:13:26.348580:   empty string
+Apr 26 14:13:26.348595:   one block
+Apr 26 14:13:26.348607:   two blocks
+Apr 26 14:13:26.348619:   two blocks with associated data
+Apr 26 14:13:26.348631: testing AES_CTR:
+Apr 26 14:13:26.348633:   Encrypting 16 octets using AES-CTR with 128-bit key
+Apr 26 14:13:26.348646:   Encrypting 32 octets using AES-CTR with 128-bit key
+Apr 26 14:13:26.348658:   Encrypting 36 octets using AES-CTR with 128-bit key
+Apr 26 14:13:26.348670:   Encrypting 16 octets using AES-CTR with 192-bit key
+Apr 26 14:13:26.348681:   Encrypting 32 octets using AES-CTR with 192-bit key
+Apr 26 14:13:26.348693:   Encrypting 36 octets using AES-CTR with 192-bit key
+Apr 26 14:13:26.348705:   Encrypting 16 octets using AES-CTR with 256-bit key
+Apr 26 14:13:26.348716:   Encrypting 32 octets using AES-CTR with 256-bit key
+Apr 26 14:13:26.348727:   Encrypting 36 octets using AES-CTR with 256-bit key
+Apr 26 14:13:26.348740: testing AES_CBC:
+Apr 26 14:13:26.348741:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Apr 26 14:13:26.348752:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Apr 26 14:13:26.348764:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Apr 26 14:13:26.348776:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Apr 26 14:13:26.348791: testing AES_XCBC:
+Apr 26 14:13:26.348792:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Apr 26 14:13:26.348851:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Apr 26 14:13:26.348913:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Apr 26 14:13:26.348968:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Apr 26 14:13:26.349025:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Apr 26 14:13:26.349082:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Apr 26 14:13:26.349150:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Apr 26 14:13:26.349257:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Apr 26 14:13:26.349318:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Apr 26 14:13:26.349382:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Apr 26 14:13:26.349474: testing HMAC_MD5:
+Apr 26 14:13:26.349475:   RFC 2104: MD5_HMAC test 1
+Apr 26 14:13:26.349514:   RFC 2104: MD5_HMAC test 2
+Apr 26 14:13:26.349549:   RFC 2104: MD5_HMAC test 3
+Apr 26 14:13:26.349596: testing HMAC_SHA1:
+Apr 26 14:13:26.349598:   CAVP: IKEv2 key derivation with HMAC-SHA1
+Apr 26 14:13:26.349750: 8 CPU cores online
+Apr 26 14:13:26.349752: starting 7 helpers
+Apr 26 14:13:26.349780: helper 1: started
+Apr 26 14:13:26.349799: helper 2: started
+Apr 26 14:13:26.349811: helper 3: started
+Apr 26 14:13:26.349822: helper 4: started
+Apr 26 14:13:26.349858: helper 5: started
+Apr 26 14:13:26.349870: helper 6: started
+Apr 26 14:13:26.349878: helper 5: seccomp security for helper not supported
+Apr 26 14:13:26.349890: helper 2: seccomp security for helper not supported
+Apr 26 14:13:26.349972: helper 1: seccomp security for helper not supported
+Apr 26 14:13:26.349982: helper 7: seccomp security for helper not supported
+Apr 26 14:13:26.349990: helper 4: seccomp security for helper not supported
+Apr 26 14:13:26.349887: helper 6: seccomp security for helper not supported
+Apr 26 14:13:26.349883: helper 7: started
+Apr 26 14:13:26.349995: helper 3: seccomp security for helper not supported
+Apr 26 14:13:26.350034: using Linux xfrm kernel support code on #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026
+Apr 26 14:13:26.350055: setting expire-lifetime= to 30 from '/proc/sys/net/core/xfrm_acq_expires'
+Apr 26 14:13:26.350126: CRL fetch support [disabled]
+Apr 26 14:13:26.350128: DNSSEC support [enabled]
+Apr 26 14:13:26.350442: IPSECKEY support [enabled]
+Apr 26 14:13:26.350506: kernel: directional SA supported by kernel
+Apr 26 14:13:26.350514: netlink response for XFRM_MSG_NEWSA Probe Test: Invalid argument (errno 22)
+Apr 26 14:13:26.350516: kernel: IPTFS ipsec SA error: requires option CONFIG_XFRM_IPTFS
+Apr 26 14:13:26.350523: kernel: MIGRATE ipsec SA error: requires option CONFIG_XFRM_MIGRATE
+Apr 26 14:13:26.350812: seccomp security not supported
+Apr 26 14:13:26.351562: "client": IKE SA proposals (connection add):
+Apr 26 14:13:26.351570: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.351572: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.351574: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.351576: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.351578: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.351598: "client": Child SA proposals (connection add):
+Apr 26 14:13:26.351600: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.351601: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.351602: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.351604: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:13:26.351605: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:13:26.351620: "client": added IKEv2 connection
+Apr 26 14:13:26.351924: listening for IKE messages
+Apr 26 14:13:26.351962: Kernel supports NIC esp-hw-offload
+Apr 26 14:13:26.352004: adding interface eth0 172.29.0.20:UDP/500
+Apr 26 14:13:26.352011: adding interface eth0 172.29.0.20:UDP/4500 (NAT)
+Apr 26 14:13:26.352018: adding interface lo 127.0.0.1:UDP/500
+Apr 26 14:13:26.352023: adding interface lo 127.0.0.1:UDP/4500 (NAT)
+Apr 26 14:13:26.352030: adding interface lo [::1]:UDP/500
+Apr 26 14:13:26.352035: adding interface lo [::1]:UDP/4500 (NAT)
+Apr 26 14:13:26.352046: "client": oriented IKEv2 connection (local: left=172.29.0.20 remote: right=172.29.0.10)
+Apr 26 14:13:26.352066: loading secrets from "/etc/ipsec.secrets"
+Apr 26 14:13:26.352072: Pluto is up
+Apr 26 14:13:26.810367: "client": IKE SA proposals (connection add):
+Apr 26 14:13:26.810404: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.810414: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.810422: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.810431: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.810440: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:13:26.810585: "client": Child SA proposals (connection add):
+Apr 26 14:13:26.810597: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.810605: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.810612: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:13:26.810620: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:13:26.810628: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:13:26.810675: "client": added oriented IKEv2 connection
+Apr 26 14:13:27.407010: "client" #1: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:13:27.408132: "client" #1: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:13:27.409575: "client" #1: processed IKE_SA_INIT response from 172.29.0.10:UDP/500 {cipher=AES_GCM_16_256 integ=n/a prf=HMAC_SHA2_512 group=DH19}, initiating IKE_AUTH
+Apr 26 14:13:27.409604: "client" #1: WARNING: '@initiator' PSK length of 15 bytes is too short for PRF HMAC_SHA2_512 in FIPS mode (32 bytes required)
+Apr 26 14:13:27.409680: "client" #1: sent IKE_AUTH request to 172.29.0.10:UDP/500 with shared-key-mac and FQDN '@initiator'; Child SA #2 {ESP <0xb53341ac} [172.29.0.20/32===172.29.0.10/32]
+Apr 26 14:13:27.424263: "client" #1: processing IKE_AUTH response from 172.29.0.10:UDP/500 containing SK{IDr,AUTH,SA,TSi,TSr}
+Apr 26 14:13:27.424296: "client" #1: WARNING: '@initiator' PSK length of 15 bytes is too short for PRF HMAC_SHA2_512 in FIPS mode (32 bytes required)
+Apr 26 14:13:27.424321: "client" #1: initiator established IKE SA; authenticated peer using authby=secret and FQDN '@responder'
+Apr 26 14:13:27.437609: "client" #2: initiator established Child SA using #1; IPsec tunnel [172.29.0.20/32===172.29.0.10/32] {ESP/ESN=>0x01fb5112 <0xb53341ac xfrm=AES_GCM_16_256 DPD=passive}
+Apr 26 14:16:30.301196: Starting Pluto (Libreswan Version 5.3 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-KDF) UNBOUND LDNS DNSSEC IPSECKEY LIBCAP_NG AUTH_PAM CURL(non-NSS) NFTABLES CAT NFLOG) pid:8
+Apr 26 14:16:30.301217: operating system: Linux 5.15.0 [Linux 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64]
+Apr 26 14:16:30.301221: using dns-resolver=file
+Apr 26 14:16:30.301222: core dump dir: /run/pluto
+Apr 26 14:16:30.301224: secrets file: /etc/ipsec.secrets
+Apr 26 14:16:30.301289: Initializing NSS using read-only database "sql:/var/lib/ipsec/nss"
+Apr 26 14:16:30.302559: FIPS Mode: OFF
+Apr 26 14:16:30.302567: NSS crypto library initialized
+Apr 26 14:16:30.302582: FIPS mode disabled for pluto daemon
+Apr 26 14:16:30.302584: NSS: OCSP [disabled]
+Apr 26 14:16:30.302585: FIPS HMAC integrity support [not required]
+Apr 26 14:16:30.302643: libcap-ng support [enabled]
+Apr 26 14:16:30.302645: Linux audit support [disabled]
+Apr 26 14:16:30.302646: leak-detective [enabled]
+Apr 26 14:16:30.302647: NSS crypto [enabled]
+Apr 26 14:16:30.302651: XAUTH PAM support [enabled]
+Apr 26 14:16:30.302657: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Apr 26 14:16:30.302675: log rate limiting [enabled]
+Apr 26 14:16:30.302677: NAT-Traversal: keep-alive period 20s
+Apr 26 14:16:30.351704: IPsec Interface [managed]
+Apr 26 14:16:30.351769: refreshed session resume keys, issuing key 1
+Apr 26 14:16:30.351845: Encryption Algorithm (cipher):
+Apr 26 14:16:30.351853:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Apr 26 14:16:30.351856:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Apr 26 14:16:30.351859:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Apr 26 14:16:30.351862:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Apr 26 14:16:30.351865:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP                      
+Apr 26 14:16:30.351868:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Apr 26 14:16:30.351870:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm, aes_gcm_c
+Apr 26 14:16:30.351873:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_b
+Apr 26 14:16:30.351876:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_a
+Apr 26 14:16:30.351878:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Apr 26 14:16:30.351881:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Apr 26 14:16:30.351883:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Apr 26 14:16:30.351886:   NULL               []             IKEv1:     ESP     IKEv2:     ESP          NULL        
+Apr 26 14:16:30.351888:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Apr 26 14:16:30.351890: Hashing Algorithm:
+Apr 26 14:16:30.351892:   MD5                               IKEv1: IKE         IKEv2:                  NSS         
+Apr 26 14:16:30.351894:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Apr 26 14:16:30.351896:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Apr 26 14:16:30.351898:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Apr 26 14:16:30.351900:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Apr 26 14:16:30.351902:   IDENTITY                          IKEv1:             IKEv2:             FIPS             
+Apr 26 14:16:30.351904: Pseudorandom Function (KDF):
+Apr 26 14:16:30.351906:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              NSS          md5
+Apr 26 14:16:30.351908:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Apr 26 14:16:30.351911:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Apr 26 14:16:30.351913:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Apr 26 14:16:30.351915:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Apr 26 14:16:30.351917:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Apr 26 14:16:30.351918: Integrity Algorithm:
+Apr 26 14:16:30.351921:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS          md5, hmac_md5
+Apr 26 14:16:30.351923:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Apr 26 14:16:30.351935:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Apr 26 14:16:30.351938:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Apr 26 14:16:30.351940:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Apr 26 14:16:30.351943:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH                   
+Apr 26 14:16:30.351945:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Apr 26 14:16:30.351947:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Apr 26 14:16:30.351949:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Apr 26 14:16:30.351951: Key Exchange Method (DH):
+Apr 26 14:16:30.351953:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Apr 26 14:16:30.351955:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Apr 26 14:16:30.351957:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Apr 26 14:16:30.351959:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Apr 26 14:16:30.351962:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Apr 26 14:16:30.351964:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Apr 26 14:16:30.351966:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Apr 26 14:16:30.351968:   DH19                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Apr 26 14:16:30.351970:   DH20                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Apr 26 14:16:30.351972:   DH21                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Apr 26 14:16:30.351974:   DH31                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Apr 26 14:16:30.351976: IP Compression:
+Apr 26 14:16:30.351978:   DEFLATE                           IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS             
+Apr 26 14:16:30.351980:   LZS                               IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:16:30.351982:   LZJH                              IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:16:30.351983: Sequence Number:
+Apr 26 14:16:30.351985:   32_BIT_SEQUENTIAL                 IKEv1:             IKEv2:     ESP AH  FIPS              no
+Apr 26 14:16:30.351987:   PARTIAL_64_BIT_SEQUENTIAL         IKEv1:             IKEv2:     ESP AH  FIPS              yes
+Apr 26 14:16:30.351989: testing CAMELLIA_CBC:
+Apr 26 14:16:30.351991:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:16:30.352040:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:16:30.352063:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:16:30.352083:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:16:30.352102: testing AES_GCM_16:
+Apr 26 14:16:30.352105:   empty string
+Apr 26 14:16:30.352129:   one block
+Apr 26 14:16:30.352149:   two blocks
+Apr 26 14:16:30.352170:   two blocks with associated data
+Apr 26 14:16:30.352190: testing AES_CTR:
+Apr 26 14:16:30.352193:   Encrypting 16 octets using AES-CTR with 128-bit key
+Apr 26 14:16:30.352212:   Encrypting 32 octets using AES-CTR with 128-bit key
+Apr 26 14:16:30.352232:   Encrypting 36 octets using AES-CTR with 128-bit key
+Apr 26 14:16:30.352251:   Encrypting 16 octets using AES-CTR with 192-bit key
+Apr 26 14:16:30.352269:   Encrypting 32 octets using AES-CTR with 192-bit key
+Apr 26 14:16:30.352292:   Encrypting 36 octets using AES-CTR with 192-bit key
+Apr 26 14:16:30.352312:   Encrypting 16 octets using AES-CTR with 256-bit key
+Apr 26 14:16:30.352329:   Encrypting 32 octets using AES-CTR with 256-bit key
+Apr 26 14:16:30.352348:   Encrypting 36 octets using AES-CTR with 256-bit key
+Apr 26 14:16:30.352372: testing AES_CBC:
+Apr 26 14:16:30.352375:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Apr 26 14:16:30.352393:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Apr 26 14:16:30.352413:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Apr 26 14:16:30.352433:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Apr 26 14:16:30.352456: testing AES_XCBC:
+Apr 26 14:16:30.352459:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Apr 26 14:16:30.352545:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Apr 26 14:16:30.352638:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Apr 26 14:16:30.352720:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Apr 26 14:16:30.352801:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Apr 26 14:16:30.352894:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Apr 26 14:16:30.352979:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Apr 26 14:16:30.353136:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Apr 26 14:16:30.353222:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Apr 26 14:16:30.353304:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Apr 26 14:16:30.353429: testing HMAC_MD5:
+Apr 26 14:16:30.353432:   RFC 2104: MD5_HMAC test 1
+Apr 26 14:16:30.353487:   RFC 2104: MD5_HMAC test 2
+Apr 26 14:16:30.353537:   RFC 2104: MD5_HMAC test 3
+Apr 26 14:16:30.353588: testing HMAC_SHA1:
+Apr 26 14:16:30.353591:   CAVP: IKEv2 key derivation with HMAC-SHA1
+Apr 26 14:16:30.353819: 8 CPU cores online
+Apr 26 14:16:30.353830: starting 7 helpers
+Apr 26 14:16:30.353874: helper 1: started
+Apr 26 14:16:30.353901: helper 2: started
+Apr 26 14:16:30.353929: helper 3: started
+Apr 26 14:16:30.353957: helper 4: started
+Apr 26 14:16:30.353975: helper 1: seccomp security for helper not supported
+Apr 26 14:16:30.353984: helper 5: started
+Apr 26 14:16:30.354006: helper 5: seccomp security for helper not supported
+Apr 26 14:16:30.354020: helper 2: seccomp security for helper not supported
+Apr 26 14:16:30.354025: helper 6: started
+Apr 26 14:16:30.354073: helper 7: started
+Apr 26 14:16:30.354081: using Linux xfrm kernel support code on #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026
+Apr 26 14:16:30.354083: helper 3: seccomp security for helper not supported
+Apr 26 14:16:30.354103: setting expire-lifetime= to 30 from '/proc/sys/net/core/xfrm_acq_expires'
+Apr 26 14:16:30.354129: helper 4: seccomp security for helper not supported
+Apr 26 14:16:30.354181: helper 6: seccomp security for helper not supported
+Apr 26 14:16:30.354199: CRL fetch support [disabled]
+Apr 26 14:16:30.354204: DNSSEC support [enabled]
+Apr 26 14:16:30.354218: helper 7: seccomp security for helper not supported
+Apr 26 14:16:30.354619: IPSECKEY support [enabled]
+Apr 26 14:16:30.354682: kernel: directional SA supported by kernel
+Apr 26 14:16:30.354693: netlink response for XFRM_MSG_NEWSA Probe Test: Invalid argument (errno 22)
+Apr 26 14:16:30.354696: kernel: IPTFS ipsec SA error: requires option CONFIG_XFRM_IPTFS
+Apr 26 14:16:30.354708: kernel: MIGRATE ipsec SA error: requires option CONFIG_XFRM_MIGRATE
+Apr 26 14:16:30.355126: seccomp security not supported
+Apr 26 14:16:30.356019: "client": IKE SA proposals (connection add):
+Apr 26 14:16:30.356029: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.356033: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.356036: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.356045: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.356048: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.356080: "client": Child SA proposals (connection add):
+Apr 26 14:16:30.356084: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.356087: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.356089: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.356091: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:16:30.356094: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:16:30.356115: "client": added IKEv2 connection
+Apr 26 14:16:30.356282: listening for IKE messages
+Apr 26 14:16:30.356322: Kernel supports NIC esp-hw-offload
+Apr 26 14:16:30.356381: adding interface eth0 172.29.0.20:UDP/500
+Apr 26 14:16:30.356394: adding interface eth0 172.29.0.20:UDP/4500 (NAT)
+Apr 26 14:16:30.356403: adding interface lo 127.0.0.1:UDP/500
+Apr 26 14:16:30.356411: adding interface lo 127.0.0.1:UDP/4500 (NAT)
+Apr 26 14:16:30.356422: adding interface lo [::1]:UDP/500
+Apr 26 14:16:30.356430: adding interface lo [::1]:UDP/4500 (NAT)
+Apr 26 14:16:30.356441: "client": oriented IKEv2 connection (local: left=172.29.0.20 remote: right=172.29.0.10)
+Apr 26 14:16:30.356476: loading secrets from "/etc/ipsec.secrets"
+Apr 26 14:16:30.356488: Pluto is up
+Apr 26 14:16:30.803319: "client": IKE SA proposals (connection add):
+Apr 26 14:16:30.803349: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.803355: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.803360: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.803366: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.803371: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:16:30.803433: "client": Child SA proposals (connection add):
+Apr 26 14:16:30.803438: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.803443: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.803447: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:16:30.803451: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:16:30.803456: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:16:30.803489: "client": added oriented IKEv2 connection
+Apr 26 14:16:31.392078: "client" #1: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:16:31.392985: "client" #1: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:16:31.893668: "client" #1: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:16:32.394602: "client" #1: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:16:33.396115: "client" #1: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:16:35.398491: "client" #1: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:16:39.398805: "client" #1: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:16:47.407304: "client" #1: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:17:03.422594: "client" #1: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:17:35.429533: "client" #1: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:17:35.429663: "client" #1: connection is supposed to remain up; revival attempt 1 scheduled in 0 seconds
+Apr 26 14:17:35.444038: "client" #1: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:17:35.444162: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:17:35.444203: "client" #2: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:17:35.445640: "client" #2: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:17:35.946580: "client" #2: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:17:36.447539: "client" #2: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:17:37.449017: "client" #2: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:17:39.451427: "client" #2: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:17:43.454592: "client" #2: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:17:51.455263: "client" #2: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:18:07.471687: "client" #2: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:18:39.482261: "client" #2: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:18:39.482327: "client" #2: connection is supposed to remain up; revival attempt 2 scheduled in 5 seconds
+Apr 26 14:18:39.509712: "client" #2: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:18:44.486966: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:18:44.487112: "client" #3: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:18:44.490113: "client" #3: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:18:44.990974: "client" #3: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:18:45.491926: "client" #3: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:18:46.493432: "client" #3: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:18:48.495798: "client" #3: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:18:52.499410: "client" #3: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:19:00.507891: "client" #3: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:19:16.513154: "client" #3: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:19:48.532975: "client" #3: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:19:48.533033: "client" #3: connection is supposed to remain up; revival attempt 3 scheduled in 10 seconds
+Apr 26 14:19:48.549277: "client" #3: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:19:58.537910: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:19:58.538055: "client" #4: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:19:58.541546: "client" #4: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:19:59.042236: "client" #4: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:19:59.543198: "client" #4: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:20:00.544756: "client" #4: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:20:02.547138: "client" #4: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:20:16.275867: Starting Pluto (Libreswan Version 5.3 IKEv2 IKEv1 XFRM XFRMI esp-hw-offload FORK PTHREAD_SETSCHEDPRIO NSS (IPsec profile) (NSS-KDF) UNBOUND LDNS DNSSEC IPSECKEY LIBCAP_NG AUTH_PAM CURL(non-NSS) NFTABLES CAT NFLOG) pid:8
+Apr 26 14:20:16.275893: operating system: Linux 5.15.0 [Linux 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64]
+Apr 26 14:20:16.275896: using dns-resolver=file
+Apr 26 14:20:16.275898: core dump dir: /run/pluto
+Apr 26 14:20:16.275900: secrets file: /etc/ipsec.secrets
+Apr 26 14:20:16.275968: Initializing NSS using read-only database "sql:/var/lib/ipsec/nss"
+Apr 26 14:20:16.277184: FIPS Mode: OFF
+Apr 26 14:20:16.277192: NSS crypto library initialized
+Apr 26 14:20:16.277205: FIPS mode disabled for pluto daemon
+Apr 26 14:20:16.277207: NSS: OCSP [disabled]
+Apr 26 14:20:16.277208: FIPS HMAC integrity support [not required]
+Apr 26 14:20:16.277262: libcap-ng support [enabled]
+Apr 26 14:20:16.277263: Linux audit support [disabled]
+Apr 26 14:20:16.277265: leak-detective [enabled]
+Apr 26 14:20:16.277266: NSS crypto [enabled]
+Apr 26 14:20:16.277267: XAUTH PAM support [enabled]
+Apr 26 14:20:16.277272: initializing libevent in pthreads mode: headers: 2.1.12-stable (2010c00); library: 2.1.12-stable (2010c00)
+Apr 26 14:20:16.277292: log rate limiting [enabled]
+Apr 26 14:20:16.277293: NAT-Traversal: keep-alive period 20s
+Apr 26 14:20:16.332772: IPsec Interface [managed]
+Apr 26 14:20:16.332851: refreshed session resume keys, issuing key 1
+Apr 26 14:20:16.332940: Encryption Algorithm (cipher):
+Apr 26 14:20:16.332947:   AES_CCM_16         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm, aes_ccm_c
+Apr 26 14:20:16.332951:   AES_CCM_12         {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_b
+Apr 26 14:20:16.332955:   AES_CCM_8          {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_ccm_a
+Apr 26 14:20:16.332959:   3DES_CBC           [*192]         IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     3des
+Apr 26 14:20:16.332962:   CAMELLIA_CTR       {256,192,*128} IKEv1:     ESP     IKEv2:     ESP                      
+Apr 26 14:20:16.332965:   CAMELLIA_CBC       {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP          NSS(CBC)     camellia
+Apr 26 14:20:16.332969:   AES_GCM_16         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm, aes_gcm_c
+Apr 26 14:20:16.332972:   AES_GCM_12         {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_b
+Apr 26 14:20:16.332976:   AES_GCM_8          {256,192,*128} IKEv1:     ESP     IKEv2: IKE ESP     FIPS NSS(AEAD)    aes_gcm_a
+Apr 26 14:20:16.332979:   AES_CTR            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CTR)     aesctr
+Apr 26 14:20:16.332983:   AES_CBC            {256,192,*128} IKEv1: IKE ESP     IKEv2: IKE ESP     FIPS NSS(CBC)     aes
+Apr 26 14:20:16.332986:   NULL_AUTH_AES_GMAC {256,192,*128} IKEv1:     ESP     IKEv2:     ESP     FIPS              aes_gmac
+Apr 26 14:20:16.332989:   NULL               []             IKEv1:     ESP     IKEv2:     ESP          NULL        
+Apr 26 14:20:16.332992:   CHACHA20_POLY1305  [*256]         IKEv1:             IKEv2: IKE ESP          NSS(AEAD)    chacha20poly1305
+Apr 26 14:20:16.332995: Hashing Algorithm:
+Apr 26 14:20:16.332998:   MD5                               IKEv1: IKE         IKEv2:                  NSS         
+Apr 26 14:20:16.333001:   SHA1                              IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha
+Apr 26 14:20:16.333004:   SHA2_256                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256
+Apr 26 14:20:16.333007:   SHA2_384                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384
+Apr 26 14:20:16.333009:   SHA2_512                          IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512
+Apr 26 14:20:16.333012:   IDENTITY                          IKEv1:             IKEv2:             FIPS             
+Apr 26 14:20:16.333014: Pseudorandom Function (KDF):
+Apr 26 14:20:16.333017:   HMAC_MD5                          IKEv1: IKE         IKEv2: IKE              NSS          md5
+Apr 26 14:20:16.333029:   HMAC_SHA1                         IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha, sha1
+Apr 26 14:20:16.333032:   HMAC_SHA2_256                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha2, sha256, sha2_256
+Apr 26 14:20:16.333035:   HMAC_SHA2_384                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha384, sha2_384
+Apr 26 14:20:16.333038:   HMAC_SHA2_512                     IKEv1: IKE         IKEv2: IKE         FIPS NSS          sha512, sha2_512
+Apr 26 14:20:16.333041:   AES_XCBC                          IKEv1:             IKEv2: IKE              native(XCBC) aes128_xcbc
+Apr 26 14:20:16.333043: Integrity Algorithm:
+Apr 26 14:20:16.333046:   HMAC_MD5_96                       IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS          md5, hmac_md5
+Apr 26 14:20:16.333049:   HMAC_SHA1_96                      IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha, sha1, sha1_96, hmac_sha1
+Apr 26 14:20:16.333053:   HMAC_SHA2_512_256                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha512, sha2_512, sha2_512_256, hmac_sha2_512
+Apr 26 14:20:16.333056:   HMAC_SHA2_384_192                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha384, sha2_384, sha2_384_192, hmac_sha2_384
+Apr 26 14:20:16.333060:   HMAC_SHA2_256_128                 IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS          sha2, sha256, sha2_256, sha2_256_128, hmac_sha2_256
+Apr 26 14:20:16.333063:   HMAC_SHA2_256_TRUNCBUG            IKEv1:     ESP AH  IKEv2:         AH                   
+Apr 26 14:20:16.333066:   AES_XCBC_96                       IKEv1:     ESP AH  IKEv2: IKE ESP AH       native(XCBC) aes_xcbc, aes128_xcbc, aes128_xcbc_96
+Apr 26 14:20:16.333069:   AES_CMAC_96                       IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS              aes_cmac
+Apr 26 14:20:16.333072:   NONE                              IKEv1:     ESP     IKEv2: IKE ESP     FIPS              null
+Apr 26 14:20:16.333074: Key Exchange Method (DH):
+Apr 26 14:20:16.333077:   NONE                              IKEv1:             IKEv2: IKE ESP AH  FIPS NSS(MODP)    null, dh0
+Apr 26 14:20:16.333080:   MODP1536                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(MODP)    dh5
+Apr 26 14:20:16.333083:   MODP2048                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh14
+Apr 26 14:20:16.333085:   MODP3072                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh15
+Apr 26 14:20:16.333088:   MODP4096                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh16
+Apr 26 14:20:16.333091:   MODP6144                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh17
+Apr 26 14:20:16.333093:   MODP8192                          IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(MODP)    dh18
+Apr 26 14:20:16.333096:   DH19                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_256, ecp256
+Apr 26 14:20:16.333099:   DH20                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_384, ecp384
+Apr 26 14:20:16.333102:   DH21                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH  FIPS NSS(ECP)     ecp_521, ecp521
+Apr 26 14:20:16.333105:   DH31                              IKEv1: IKE ESP AH  IKEv2: IKE ESP AH       NSS(ECP)     curve25519
+Apr 26 14:20:16.333107: IP Compression:
+Apr 26 14:20:16.333109:   DEFLATE                           IKEv1:     ESP AH  IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.333112:   LZS                               IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.333114:   LZJH                              IKEv1:             IKEv2:     ESP AH  FIPS             
+Apr 26 14:20:16.333116: Sequence Number:
+Apr 26 14:20:16.333120:   32_BIT_SEQUENTIAL                 IKEv1:             IKEv2:     ESP AH  FIPS              no
+Apr 26 14:20:16.333122:   PARTIAL_64_BIT_SEQUENTIAL         IKEv1:             IKEv2:     ESP AH  FIPS              yes
+Apr 26 14:20:16.333128: testing CAMELLIA_CBC:
+Apr 26 14:20:16.333131:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:20:16.333181:   Camellia: 16 bytes with 128-bit key
+Apr 26 14:20:16.333206:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:20:16.333229:   Camellia: 16 bytes with 256-bit key
+Apr 26 14:20:16.333252: testing AES_GCM_16:
+Apr 26 14:20:16.333254:   empty string
+Apr 26 14:20:16.333282:   one block
+Apr 26 14:20:16.333305:   two blocks
+Apr 26 14:20:16.333330:   two blocks with associated data
+Apr 26 14:20:16.333354: testing AES_CTR:
+Apr 26 14:20:16.333356:   Encrypting 16 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.333382:   Encrypting 32 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.333406:   Encrypting 36 octets using AES-CTR with 128-bit key
+Apr 26 14:20:16.333430:   Encrypting 16 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.333452:   Encrypting 32 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.333475:   Encrypting 36 octets using AES-CTR with 192-bit key
+Apr 26 14:20:16.333499:   Encrypting 16 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.333521:   Encrypting 32 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.333543:   Encrypting 36 octets using AES-CTR with 256-bit key
+Apr 26 14:20:16.333583: testing AES_CBC:
+Apr 26 14:20:16.333585:   Encrypting 16 bytes (1 block) using AES-CBC with 128-bit key
+Apr 26 14:20:16.333607:   Encrypting 32 bytes (2 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.333631:   Encrypting 48 bytes (3 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.333655:   Encrypting 64 bytes (4 blocks) using AES-CBC with 128-bit key
+Apr 26 14:20:16.333684: testing AES_XCBC:
+Apr 26 14:20:16.333686:   RFC 3566 Test Case 1: AES-XCBC-MAC-96 with 0-byte input
+Apr 26 14:20:16.333802:   RFC 3566 Test Case 2: AES-XCBC-MAC-96 with 3-byte input
+Apr 26 14:20:16.333934:   RFC 3566 Test Case 3: AES-XCBC-MAC-96 with 16-byte input
+Apr 26 14:20:16.334055:   RFC 3566 Test Case 4: AES-XCBC-MAC-96 with 20-byte input
+Apr 26 14:20:16.334180:   RFC 3566 Test Case 5: AES-XCBC-MAC-96 with 32-byte input
+Apr 26 14:20:16.334311:   RFC 3566 Test Case 6: AES-XCBC-MAC-96 with 34-byte input
+Apr 26 14:20:16.334443:   RFC 3566 Test Case 7: AES-XCBC-MAC-96 with 1000-byte input
+Apr 26 14:20:16.334728:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 16)
+Apr 26 14:20:16.334863:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 10)
+Apr 26 14:20:16.334995:   RFC 4434 Test Case AES-XCBC-PRF-128 with 20-byte input (key length 18)
+Apr 26 14:20:16.335196: testing HMAC_MD5:
+Apr 26 14:20:16.335198:   RFC 2104: MD5_HMAC test 1
+Apr 26 14:20:16.335283:   RFC 2104: MD5_HMAC test 2
+Apr 26 14:20:16.335358:   RFC 2104: MD5_HMAC test 3
+Apr 26 14:20:16.335435: testing HMAC_SHA1:
+Apr 26 14:20:16.335438:   CAVP: IKEv2 key derivation with HMAC-SHA1
+Apr 26 14:20:16.335778: 8 CPU cores online
+Apr 26 14:20:16.335781: starting 7 helpers
+Apr 26 14:20:16.335831: helper 1: started
+Apr 26 14:20:16.335866: helper 2: started
+Apr 26 14:20:16.335889: helper 3: started
+Apr 26 14:20:16.335915: helper 4: started
+Apr 26 14:20:16.335939: helper 5: started
+Apr 26 14:20:16.335963: helper 6: started
+Apr 26 14:20:16.335976: helper 1: seccomp security for helper not supported
+Apr 26 14:20:16.336006: helper 2: seccomp security for helper not supported
+Apr 26 14:20:16.336016: helper 5: seccomp security for helper not supported
+Apr 26 14:20:16.336057: helper 3: seccomp security for helper not supported
+Apr 26 14:20:16.336057: helper 4: seccomp security for helper not supported
+Apr 26 14:20:16.336108: helper 6: seccomp security for helper not supported
+Apr 26 14:20:16.335988: helper 7: started
+Apr 26 14:20:16.336182: helper 7: seccomp security for helper not supported
+Apr 26 14:20:16.336193: using Linux xfrm kernel support code on #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026
+Apr 26 14:20:16.336246: setting expire-lifetime= to 30 from '/proc/sys/net/core/xfrm_acq_expires'
+Apr 26 14:20:16.336358: CRL fetch support [disabled]
+Apr 26 14:20:16.336370: DNSSEC support [enabled]
+Apr 26 14:20:16.336935: IPSECKEY support [enabled]
+Apr 26 14:20:16.336999: kernel: directional SA supported by kernel
+Apr 26 14:20:16.337008: netlink response for XFRM_MSG_NEWSA Probe Test: Invalid argument (errno 22)
+Apr 26 14:20:16.337010: kernel: IPTFS ipsec SA error: requires option CONFIG_XFRM_IPTFS
+Apr 26 14:20:16.337021: kernel: MIGRATE ipsec SA error: requires option CONFIG_XFRM_MIGRATE
+Apr 26 14:20:16.337483: seccomp security not supported
+Apr 26 14:20:16.338391: "client": IKE SA proposals (connection add):
+Apr 26 14:20:16.338403: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.338406: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.338409: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.338412: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.338414: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.338445: "client": Child SA proposals (connection add):
+Apr 26 14:20:16.338448: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.338450: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.338452: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.338455: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.338457: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.338494: "client": added IKEv2 connection
+Apr 26 14:20:16.338697: listening for IKE messages
+Apr 26 14:20:16.338743: Kernel supports NIC esp-hw-offload
+Apr 26 14:20:16.338802: adding interface eth0 172.29.0.20:UDP/500
+Apr 26 14:20:16.338812: adding interface eth0 172.29.0.20:UDP/4500 (NAT)
+Apr 26 14:20:16.338820: adding interface lo 127.0.0.1:UDP/500
+Apr 26 14:20:16.338828: adding interface lo 127.0.0.1:UDP/4500 (NAT)
+Apr 26 14:20:16.338839: adding interface lo [::1]:UDP/500
+Apr 26 14:20:16.338846: adding interface lo [::1]:UDP/4500 (NAT)
+Apr 26 14:20:16.338856: "client": oriented IKEv2 connection (local: left=172.29.0.20 remote: right=172.29.0.10)
+Apr 26 14:20:16.338885: loading secrets from "/etc/ipsec.secrets"
+Apr 26 14:20:16.338894: Pluto is up
+Apr 26 14:20:16.780033: "client": IKE SA proposals (connection add):
+Apr 26 14:20:16.780064: "client":   1:IKE=AES_GCM_16_256-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.780072: "client":   2:IKE=AES_GCM_16_128-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.780077: "client":   3:IKE=CHACHA20_POLY1305-HMAC_SHA2_512+HMAC_SHA2_256-NONE-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.780083: "client":   4:IKE=AES_CBC_256-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.780088: "client":   5:IKE=AES_CBC_128-HMAC_SHA2_512+HMAC_SHA2_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-ECP_256+ECP_384+ECP_521+CURVE25519+MODP4096+MODP3072+MODP2048+MODP8192
+Apr 26 14:20:16.780155: "client": Child SA proposals (connection add):
+Apr 26 14:20:16.780161: "client":   1:ESP=AES_GCM_16_256-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.780166: "client":   2:ESP=AES_GCM_16_128-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.780170: "client":   3:ESP=CHACHA20_POLY1305-NONE-NONE-ESN:YES+NO
+Apr 26 14:20:16.780175: "client":   4:ESP=AES_CBC_256-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.780180: "client":   5:ESP=AES_CBC_128-HMAC_SHA2_512_256+HMAC_SHA2_256_128-NONE-ESN:YES+NO
+Apr 26 14:20:16.780232: "client": added oriented IKEv2 connection
+Apr 26 14:20:17.374311: "client" #1: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:20:17.375117: "client" #1: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:20:17.875873: "client" #1: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:20:18.376944: "client" #1: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:20:19.378539: "client" #1: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:20:21.381192: "client" #1: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:20:25.385917: "client" #1: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:20:33.393326: "client" #1: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:20:49.404257: "client" #1: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:21:21.412957: "client" #1: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:21:21.412990: "client" #1: connection is supposed to remain up; revival attempt 1 scheduled in 0 seconds
+Apr 26 14:21:21.423158: "client" #1: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:21:21.423440: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:21:21.423526: "client" #2: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:21:21.424915: "client" #2: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:21:21.925642: "client" #2: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:21:22.426598: "client" #2: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:21:23.428041: "client" #2: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:21:25.430452: "client" #2: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:21:29.434820: "client" #2: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:21:37.439452: "client" #2: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:21:53.456003: "client" #2: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:22:25.462535: "client" #2: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:22:25.462645: "client" #2: connection is supposed to remain up; revival attempt 2 scheduled in 5 seconds
+Apr 26 14:22:25.481843: "client" #2: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:22:30.471306: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:22:30.471454: "client" #3: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:22:30.474567: "client" #3: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:22:30.971438: "client" #3: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:22:31.472489: "client" #3: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:22:32.473941: "client" #3: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:22:34.476513: "client" #3: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:22:38.476038: "client" #3: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:22:46.484365: "client" #3: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:23:02.487843: "client" #3: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:23:34.502851: "client" #3: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:23:34.503004: "client" #3: connection is supposed to remain up; revival attempt 3 scheduled in 10 seconds
+Apr 26 14:23:34.520205: "client" #3: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:23:44.512814: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:23:44.512956: "client" #4: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:23:44.515708: "client" #4: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:23:45.016363: "client" #4: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:23:45.517380: "client" #4: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:23:46.518639: "client" #4: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:23:48.520954: "client" #4: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:23:52.523806: "client" #4: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:24:00.527438: "client" #4: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:24:16.530872: "client" #4: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:24:48.541531: "client" #4: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:24:48.541601: "client" #4: connection is supposed to remain up; revival attempt 4 scheduled in 15 seconds
+Apr 26 14:24:48.556119: "client" #4: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:25:03.547614: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:25:03.547829: "client" #5: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:25:03.551947: "client" #5: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:25:04.052855: "client" #5: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:25:04.559397: "client" #5: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:25:05.563189: "client" #5: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:25:07.565510: "client" #5: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:25:11.570829: "client" #5: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:25:19.574708: "client" #5: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:25:35.591279: "client" #5: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:26:07.601093: "client" #5: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:26:07.601161: "client" #5: connection is supposed to remain up; revival attempt 5 scheduled in 20 seconds
+Apr 26 14:26:07.618321: "client" #5: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:26:27.615158: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:26:27.615349: "client" #6: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:26:27.618287: "client" #6: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:26:28.123237: "client" #6: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:26:28.631406: "client" #6: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:26:29.634970: "client" #6: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:26:31.642877: "client" #6: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:26:35.647469: "client" #6: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:26:43.655082: "client" #6: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:26:59.662784: "client" #6: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:27:31.682393: "client" #6: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:27:31.682625: "client" #6: connection is supposed to remain up; revival attempt 6 scheduled in 25 seconds
+Apr 26 14:27:31.701143: "client" #6: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:27:56.687239: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:27:56.687373: "client" #7: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:27:56.690029: "client" #7: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:27:57.190801: "client" #7: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:27:57.695288: "client" #7: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:27:58.698978: "client" #7: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:28:00.703484: "client" #7: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:28:04.707685: "client" #7: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:28:12.716112: "client" #7: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:28:28.728811: "client" #7: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:29:00.731083: "client" #7: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:29:00.731145: "client" #7: connection is supposed to remain up; revival attempt 7 scheduled in 30 seconds
+Apr 26 14:29:00.739794: "client" #7: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:29:30.748013: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:29:30.748176: "client" #8: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:29:30.750631: "client" #8: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:29:31.250891: "client" #8: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:29:31.755306: "client" #8: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:29:32.756829: "client" #8: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:29:34.762654: "client" #8: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:29:38.766167: "client" #8: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:29:46.774781: "client" #8: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:30:02.784426: "client" #8: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:30:34.807703: "client" #8: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:30:34.807776: "client" #8: connection is supposed to remain up; revival attempt 8 scheduled in 35 seconds
+Apr 26 14:30:34.824374: "client" #8: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:31:09.821508: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:31:09.821718: "client" #9: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:31:09.824793: "client" #9: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:31:10.325494: "client" #9: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:31:10.830738: "client" #9: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:31:11.834556: "client" #9: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:31:13.837032: "client" #9: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:31:17.843238: "client" #9: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:31:25.851808: "client" #9: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:31:41.861578: "client" #9: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:32:13.873060: "client" #9: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:32:13.873092: "client" #9: connection is supposed to remain up; revival attempt 9 scheduled in 40 seconds
+Apr 26 14:32:13.880175: "client" #9: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:32:53.891925: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:32:53.892066: "client" #10: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:32:53.894282: "client" #10: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:32:54.399600: "client" #10: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:32:54.907301: "client" #10: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:32:55.911161: "client" #10: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:32:57.919326: "client" #10: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:33:01.923516: "client" #10: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:33:09.931897: "client" #10: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:33:25.942215: "client" #10: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:33:57.947297: "client" #10: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:33:57.947397: "client" #10: connection is supposed to remain up; revival attempt 10 scheduled in 45 seconds
+Apr 26 14:33:57.963030: "client" #10: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:34:42.954519: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:34:42.954675: "client" #11: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:34:42.957148: "client" #11: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:34:43.457973: "client" #11: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:34:43.958949: "client" #11: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:34:44.963711: "client" #11: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:34:46.967148: "client" #11: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:34:50.974913: "client" #11: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:34:58.981558: "client" #11: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:35:14.998209: "client" #11: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:35:47.005176: "client" #11: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:35:47.005295: "client" #11: connection is supposed to remain up; revival attempt 11 scheduled in 50 seconds
+Apr 26 14:35:47.023575: "client" #11: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:36:37.007320: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:36:37.007451: "client" #12: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:36:37.010565: "client" #12: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:36:37.511337: "client" #12: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:36:38.012146: "client" #12: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:36:39.013475: "client" #12: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:36:41.016085: "client" #12: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:36:45.020445: "client" #12: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:36:53.028388: "client" #12: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:37:09.036744: "client" #12: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:37:41.040618: "client" #12: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:37:41.040685: "client" #12: connection is supposed to remain up; revival attempt 12 scheduled in 55 seconds
+Apr 26 14:37:41.056227: "client" #12: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:38:36.053367: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:38:36.053538: "client" #13: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:38:36.057143: "client" #13: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:38:36.555131: "client" #13: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:38:37.056306: "client" #13: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:38:38.057719: "client" #13: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:38:40.060337: "client" #13: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:38:44.064732: "client" #13: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:38:52.069207: "client" #13: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:39:08.083025: "client" #13: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:39:40.089830: "client" #13: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:39:40.089892: "client" #13: connection is supposed to remain up; revival attempt 13 scheduled in 60 seconds
+Apr 26 14:39:40.108757: "client" #13: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:40:40.087669: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:40:40.087885: "client" #14: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:40:40.091554: "client" #14: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:40:40.592370: "client" #14: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:40:41.093310: "client" #14: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:40:42.094762: "client" #14: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:40:44.097334: "client" #14: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:40:48.101698: "client" #14: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:40:56.110007: "client" #14: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:41:12.110898: "client" #14: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:41:44.117767: "client" #14: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:41:44.117861: "client" #14: connection is supposed to remain up; revival attempt 14 scheduled in 65 seconds
+Apr 26 14:41:44.135945: "client" #14: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:42:49.128720: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:42:49.129074: "client" #15: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:42:49.132088: "client" #15: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:42:49.632943: "client" #15: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:42:50.133926: "client" #15: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:42:51.135209: "client" #15: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:42:53.137618: "client" #15: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:42:57.139635: "client" #15: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:43:05.148328: "client" #15: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:43:21.153892: "client" #15: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:43:53.170391: "client" #15: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:43:53.170449: "client" #15: connection is supposed to remain up; revival attempt 15 scheduled in 70 seconds
+Apr 26 14:43:53.187686: "client" #15: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:45:03.175319: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:45:03.175570: "client" #16: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:45:03.179264: "client" #16: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:45:03.680119: "client" #16: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:45:04.181059: "client" #16: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:45:05.182411: "client" #16: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:45:07.184766: "client" #16: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:45:11.189264: "client" #16: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:45:19.194320: "client" #16: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:45:35.206842: "client" #16: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:46:07.218978: "client" #16: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:46:07.219074: "client" #16: connection is supposed to remain up; revival attempt 16 scheduled in 75 seconds
+Apr 26 14:46:07.237266: "client" #16: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:47:22.225710: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:47:22.225849: "client" #17: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:47:22.228257: "client" #17: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:47:22.729002: "client" #17: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:47:23.229999: "client" #17: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:47:24.231317: "client" #17: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:47:26.233548: "client" #17: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:47:30.237971: "client" #17: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:47:38.241736: "client" #17: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:47:54.258336: "client" #17: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:48:26.269527: "client" #17: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:48:26.269611: "client" #17: connection is supposed to remain up; revival attempt 17 scheduled in 80 seconds
+Apr 26 14:48:26.285981: "client" #17: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:49:46.278211: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:49:46.278383: "client" #18: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:49:46.281133: "client" #18: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:49:46.781830: "client" #18: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:49:47.282781: "client" #18: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:49:48.284135: "client" #18: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:49:50.286392: "client" #18: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:49:54.290833: "client" #18: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:50:02.298337: "client" #18: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:50:18.302020: "client" #18: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:50:50.316634: "client" #18: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:50:50.316665: "client" #18: connection is supposed to remain up; revival attempt 18 scheduled in 85 seconds
+Apr 26 14:50:50.322679: "client" #18: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:52:15.319906: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:52:15.320055: "client" #19: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:52:15.323015: "client" #19: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:52:15.823958: "client" #19: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:52:16.324934: "client" #19: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:52:17.324608: "client" #19: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:52:19.326999: "client" #19: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:52:23.331869: "client" #19: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:52:31.340448: "client" #19: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:52:47.350772: "client" #19: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:53:19.355582: "client" #19: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:53:19.355662: "client" #19: connection is supposed to remain up; revival attempt 19 scheduled in 90 seconds
+Apr 26 14:53:19.370691: "client" #19: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:54:49.370715: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:54:49.370890: "client" #20: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:54:49.374066: "client" #20: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:54:49.874743: "client" #20: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:54:50.375743: "client" #20: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:54:51.377050: "client" #20: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:54:53.379361: "client" #20: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:54:57.380853: "client" #20: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:55:05.389284: "client" #20: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:55:21.389795: "client" #20: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:55:53.406416: "client" #20: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:55:53.406549: "client" #20: connection is supposed to remain up; revival attempt 20 scheduled in 95 seconds
+Apr 26 14:55:53.422548: "client" #20: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 14:57:28.420322: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 14:57:28.420514: "client" #21: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 14:57:28.423057: "client" #21: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 14:57:28.923840: "client" #21: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 14:57:29.424845: "client" #21: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 14:57:30.426244: "client" #21: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 14:57:32.428658: "client" #21: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 14:57:36.429175: "client" #21: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 14:57:44.437692: "client" #21: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 14:58:00.442429: "client" #21: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 14:58:32.460258: "client" #21: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 14:58:32.460423: "client" #21: connection is supposed to remain up; revival attempt 21 scheduled in 100 seconds
+Apr 26 14:58:32.493280: "client" #21: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 15:00:12.477359: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 15:00:12.477538: "client" #22: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 15:00:12.480279: "client" #22: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 15:00:12.981161: "client" #22: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 15:00:13.487318: "client" #22: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 15:00:14.491124: "client" #22: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 15:00:16.493547: "client" #22: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 15:00:20.498122: "client" #22: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 15:00:28.506528: "client" #22: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 15:00:44.519102: "client" #22: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 15:01:16.523163: "client" #22: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 15:01:16.523211: "client" #22: connection is supposed to remain up; revival attempt 22 scheduled in 105 seconds
+Apr 26 15:01:16.530951: "client" #22: deleting IKE SA (sent IKE_SA_INIT request)
+Apr 26 15:03:01.528127: "client": reviving connection which timeout IKE SA but must remain up per local policy (serial $2)
+Apr 26 15:03:01.528424: "client" #23: initiating IKEv2 connection to 172.29.0.10 using UDP
+Apr 26 15:03:01.531867: "client" #23: sent IKE_SA_INIT request to 172.29.0.10:UDP/500
+Apr 26 15:03:02.035095: "client" #23: retransmitting IKE_SA_INIT request; will wait 0.5 seconds for response
+Apr 26 15:03:02.538568: "client" #23: retransmitting IKE_SA_INIT request; will wait 1 second for response
+Apr 26 15:03:03.543396: "client" #23: retransmitting IKE_SA_INIT request; will wait 2 seconds for response
+Apr 26 15:03:05.546901: "client" #23: retransmitting IKE_SA_INIT request; will wait 4 seconds for response
+Apr 26 15:03:09.550549: "client" #23: retransmitting IKE_SA_INIT request; will wait 8 seconds for response
+Apr 26 15:03:17.554247: "client" #23: retransmitting IKE_SA_INIT request; will wait 16 seconds for response
+Apr 26 15:03:33.558713: "client" #23: retransmitting IKE_SA_INIT request; will wait 32 seconds for response
+Apr 26 15:04:05.568914: "client" #23: IKE_SA_INIT_I: 60 second timeout exceeded after 7 retransmits.  No response (or no acceptable response) to our first IKEv2 message
+Apr 26 15:04:05.568953: "client" #23: connection is supposed to remain up; revival attempt 23 scheduled in 110 seconds
+Apr 26 15:04:05.583832: "client" #23: deleting IKE SA (sent IKE_SA_INIT request)
